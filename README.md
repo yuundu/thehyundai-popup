@@ -8,6 +8,15 @@
 - 🏗️ 레포: https://github.com/yuundu/thehyundai-popup
 - ⏰ 수집 스케줄: 평일(월~금) 08:49 KST = UTC 23:49 (GitHub Actions cron)
 
+## 설치(최초 1회)
+
+1. 레포 **Settings → Pages → Source: GitHub Actions** 선택.
+2. `.install/deploy.yml` 을 **`.github/workflows/deploy.yml` 로 추가**.
+   (Pickle 의 GitHub 연동 토큰은 워크플로 파일 push 권한이 없어, 파일 생성은
+   GitHub 웹에서 한 번 직접 해야 합니다 — Actions 탭에서도 추가 가능)
+3. 이후 매일 평일 08:49 KST 에 자동 수집·배포됩니다. `Actions → Run workflow`
+   로 즉시 테스트 실행도 가능합니다.
+
 ## 동작 방식 (한 장 요약)
 
 ```
