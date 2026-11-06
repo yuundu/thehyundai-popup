@@ -1,266 +1,796 @@
 package site
 
 // indexTmpl 은 단일 파일로 배포 가능한 index.html 템플릿이다.
-// 브라우저에서 이 파일에 박힌 목록으로 검색과 필터를 수행한다.
+// 더현대 서울 공식 웹사이트와 29CM 매거진의 감각적인 에디토리얼 레이아웃을 반영했다.
 const indexTmpl = `<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>더현대 서울 팝업 레이더</title>
-<meta name="description" content="더현대 서울 팝업을 층별로 모은 목록. 평일 아침 08:49에 다시 수집합니다.">
+<title>THE HYUNDAI SEOUL · POP-UP RADAR | 매거진 에디션</title>
+<meta name="description" content="더현대 서울 팝업스토어를 층별로 한눈에. 매일 아침 08:49 KST 자동 업데이트되는 에디토리얼 팝업 매거진.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <style>
-{{cssStamp}}
 :root {
-  color-scheme: light;
-  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
-  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
-  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
-  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
-  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
-  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
-  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  --control: 48px;
-  --tracking-figure: -0.04em;
-  --color-paper: oklch(84% 0.012 245); --color-paper-2: oklch(81% 0.012 245); --color-paper-3: oklch(77% 0.012 245);
-  --color-ink: oklch(16% 0.020 245); --color-ink-2: oklch(24% 0.018 245); --color-muted: oklch(38% 0.016 245);
-  --color-rule: oklch(73% 0.013 240); --color-rule-2: oklch(32% 0.018 240);
-  --color-accent: oklch(45% 0.180 350); --color-accent-2: oklch(37% 0.160 350); --color-accent-ink: oklch(97% 0.006 245); --color-focus: oklch(46% 0.190 350);
-  --color-sheet: oklch(93.5% 0.008 245);
-  --font-display: "Hanken Grotesk", "Noto Sans KR", sans-serif;
-  --font-body: "Newsreader", "Noto Serif KR", serif;
-  --font-outlier: "IBM Plex Mono", "Noto Sans KR", monospace;
-  --radius-card: 0; --radius-pill: 2px; --rule-hair: 1px; --rule-bar: 2px; --shadow-card: none;
-  --tracking-display: -0.02em; --display-weight: 600;
+  --bg: #ffffff;
+  --bg-sub: #f8f9fa;
+  --card: #ffffff;
+  --line: #e5e5e5;
+  --line-bold: #000000;
+  --text-main: #111111;
+  --text-body: #374151;
+  --text-sub: #6b7280;
+  --text-muted: #9ca3af;
+  --point-green: #006b54;
+  --point-green-light: #eef8f5;
+  --tag-red: #d92d20;
+  --tag-red-bg: #fff0f0;
+  --tag-red-border: #ffc9c9;
+  --tag-amber: #b45309;
+  --tag-amber-bg: #fffbeb;
+  --tag-amber-border: #fde68a;
+  --tag-deal: #047857;
+  --tag-deal-bg: #ecfdf5;
+  --tag-deal-border: #a7f3d0;
+  --tag-warn: #c2410c;
+  --tag-warn-bg: #fff7ed;
+  --tag-warn-border: #fed7aa;
 }
-*, *::before, *::after { box-sizing: border-box; }
-html, body { overflow-x: clip; }
-html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-3xl); }
-body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
-::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
-:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-a { color: inherit; text-decoration-color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
-a:hover { text-decoration-thickness: 2px; }
-h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
-h1 { max-width: 20ch; font-size: var(--text-display); } h2 { max-width: 30ch; font-size: var(--text-section); } h3 { max-width: 40ch; font-size: var(--text-title); line-height: 1.2; }
-.lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; }
-p { margin: 0; text-wrap: pretty; }
-p:not([class]) { max-width: 65ch; }
-img, video { max-width: 100%; height: auto; display: block; }
-[hidden] { display: none !important; }
-button, input, select, textarea { font: inherit; color: inherit; }
-.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
-.num { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; font-weight: 500; }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.slab { background: var(--color-ink); color: var(--color-sheet); }
-.slab .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-lg); min-height: var(--space-2xl); }
-.brand { display: flex; gap: var(--space-md); align-items: baseline; margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); letter-spacing: var(--tracking-display); }
-.brand a { color: var(--color-sheet); text-decoration: underline; text-decoration-color: var(--color-accent); white-space: nowrap; }
-.brand span { font-family: var(--font-body); font-weight: 400; font-size: var(--text-md); letter-spacing: 0; }
-.slab time { font-family: var(--font-outlier); font-size: var(--text-sm); font-weight: 500; font-variant-numeric: tabular-nums; }
-.slab :focus-visible { outline-color: var(--color-sheet); }
-.hero-copy { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
-.lead { margin-top: var(--space-md); color: var(--color-ink-2); }
-.find { position: sticky; top: 0; z-index: var(--z-sticky); display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-lg); padding-block: var(--space-sm); background: var(--color-paper); }
-.search { width: 100%; min-height: var(--control); padding: var(--space-sm) var(--space-md); background: var(--color-sheet); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); font-family: var(--font-body); font-size: var(--text-md); }
-.search::placeholder { color: var(--color-muted); }
-.tabs { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
-.floor-tab, .kind { min-height: var(--control); padding: var(--space-sm) var(--space-md); border: 0; border-bottom: var(--rule-bar) solid transparent; border-radius: 0; background: transparent; color: var(--color-ink-2); font-family: var(--font-display); font-weight: 500; font-size: var(--text-sm); white-space: nowrap; cursor: pointer; }
-.floor-tab:hover, .kind:hover, .search:hover { background: var(--color-paper-3); }
-.floor-tab:active, .kind:active { background: var(--color-paper-2); }
-.floor-tab.active, .kind.active { color: var(--color-ink); border-bottom-color: var(--color-rule-2); background: transparent; }
-button:disabled, input:disabled { color: var(--color-muted); background: var(--color-paper-3); cursor: not-allowed; }
-.sum { margin-top: var(--space-sm); color: var(--color-ink-2); }
-.sheet { background: var(--color-sheet); border-top: var(--rule-bar) solid var(--color-ink); padding-block: var(--space-2xl); }
-#count { color: var(--color-muted); font-size: var(--text-sm); margin-bottom: var(--space-lg); }
-.floor { margin-top: var(--space-2xl); }
-.floor:first-child { margin-top: 0; }
-.floor-head { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-lg); align-items: center; border-bottom: var(--rule-bar) solid var(--color-rule-2); padding-bottom: var(--space-sm); }
-.floor-head.no-code { grid-template-columns: minmax(0, 1fr); }
-.code { margin: 0; font-family: var(--font-outlier); font-weight: 500; font-size: var(--text-section); letter-spacing: var(--tracking-figure); line-height: 1; color: var(--color-ink); font-variant-numeric: tabular-nums; }
-.zone { margin-top: var(--space-2xs); color: var(--color-muted); font-size: var(--text-sm); }
-.entry { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--gap-columns); row-gap: var(--space-2xs); align-items: baseline; padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
-.entry h3 { grid-column: 1; }
-.when { grid-column: 2; font-size: var(--text-sm); }
-.where { grid-column: 3; color: var(--color-ink-2); }
-.price { grid-column: 4; text-align: right; font-size: var(--text-sm); }
-.states, .blurb, .wait, .differ, .sources { grid-column: 1 / -1; }
-.state { font-size: var(--text-sm); color: var(--color-muted); margin-right: var(--space-sm); }
-.state.is-open { color: var(--color-accent-2); }
-.blurb { color: var(--color-ink-2); }
-.wait, .differ, .sources { font-size: var(--text-sm); color: var(--color-ink-2); }
-.sources a { margin-right: var(--space-md); }
-.empty { padding-block: var(--space-xl); color: var(--color-ink-2); }
-.mast { font-family: var(--font-display); font-weight: 600; font-size: var(--text-section); letter-spacing: var(--tracking-display); line-height: 1.05; margin-bottom: var(--space-md); }
-footer { padding-top: var(--space-2xl); padding-bottom: var(--space-xl); }
-.fine { margin-top: var(--space-sm); max-width: 65ch; color: var(--color-ink-2); font-size: var(--text-sm); }
-@media (max-width: 60rem) {
-  :root { --gutter: 24px; }
-  .entry { grid-template-columns: minmax(0, 1fr); }
-  .entry h3, .when, .where, .price { grid-column: 1; }
-  .price { text-align: start; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
-@media (max-width: 40rem) { :root { --gutter: 16px; --gap-columns: 16px; } }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* 29CM & THE HYUNDAI Editorial Header */
+header {
+  padding: 44px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-eyebrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.brand-eyebrow .right-badge {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--point-green);
+  font-weight: 600;
+  background: var(--point-green-light);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+h1.main-title {
+  font-size: clamp(30px, 5.2vw, 50px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+h1.main-title .serif {
+  font-family: 'Playfair Display', 'Didot', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.sub-desc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.asof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--text-main);
+  background: #fff;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.summary-text b {
+  color: var(--point-green);
+  font-weight: 700;
+}
+
+/* Sticky Controls */
+.controls-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0 14px;
+}
+
+.search-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--bg-sub);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text-main);
+  padding: 12px 16px 12px 40px;
+  font-size: 14.5px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  background: #ffffff;
+  border-color: var(--text-main);
+  box-shadow: 0 0 0 1px var(--text-main);
+}
+
+/* 29CM Tab Buttons */
+.floortabs {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.floortabs::-webkit-scrollbar { display: none; }
+
+.ftab {
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--text-sub);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ftab:hover {
+  color: var(--text-main);
+  border-color: var(--text-main);
+}
+
+.ftab.active {
+  background: var(--text-main);
+  border-color: var(--text-main);
+  color: #ffffff;
+}
+
+/* Category Chips */
+.chips {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--text-sub);
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--text-sub);
+  color: var(--text-main);
+}
+
+.chip.active {
+  border-color: var(--point-green);
+  color: var(--point-green);
+  background: var(--point-green-light);
+  font-weight: 600;
+}
+
+/* Count bar */
+.count-bar {
+  margin: 24px 0 16px;
+  font-size: 14px;
+  color: var(--text-sub);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count-bar .total-highlight {
+  color: var(--point-green);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* 29CM Editorial Section Header */
+.floor-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 44px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--line-bold);
+}
+
+.floor-section-head .head-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.floor-section-head .floor-code {
+  font-size: 26px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.floor-section-head .floor-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.floor-section-head .floor-count {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Cards Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 22px;
+}
+
+/* 29CM Magazine Editorial Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--text-main);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card.is-new {
+  border-top: 3px solid var(--tag-red);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bdg {
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 2px;
+  padding: 3px 7px;
+  letter-spacing: -0.01em;
+  border: 1px solid transparent;
+}
+
+.bdg.floor {
+  background: #f4f4f4;
+  color: var(--text-main);
+  border-color: #e0e0e0;
+  font-weight: 700;
+}
+
+.bdg.new {
+  background: var(--tag-red-bg);
+  color: var(--tag-red);
+  border-color: var(--tag-red-border);
+}
+
+.bdg.ending {
+  background: var(--tag-amber-bg);
+  color: var(--tag-amber);
+  border-color: var(--tag-amber-border);
+}
+
+.bdg.deal {
+  background: var(--tag-deal-bg);
+  color: var(--tag-deal);
+  border-color: var(--tag-deal-border);
+}
+
+.bdg.warn {
+  background: var(--tag-warn-bg);
+  color: var(--tag-warn);
+  border-color: var(--tag-warn-border);
+}
+
+.bdg.closed {
+  background: #f3f4f6;
+  color: var(--text-muted);
+}
+
+.category-label {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.pname {
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.period {
+  font-size: 13.5px;
+  color: var(--point-green);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.summary-desc {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.meta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--text-sub);
+  background: var(--bg-sub);
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+
+.meta-row {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.meta-row .label {
+  font-weight: 600;
+  color: var(--text-main);
+  min-width: 32px;
+}
+
+.meta-row .price-val {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.waiting-box {
+  font-size: 12.5px;
+  color: #1e293b;
+  background: #f8fafc;
+  border-left: 3px solid var(--point-green);
+  border-radius: 0 3px 3px 0;
+  padding: 8px 12px;
+  line-height: 1.45;
+}
+
+.alt-box {
+  font-size: 12px;
+  color: #7c2d12;
+  background: var(--tag-warn-bg);
+  border-left: 3px solid var(--tag-warn);
+  border-radius: 0 3px 3px 0;
+  padding: 8px 12px;
+  line-height: 1.45;
+}
+
+.card-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.card-foot a {
+  color: var(--text-sub);
+  border-bottom: 1px dotted var(--text-muted);
+}
+
+.card-foot a:hover {
+  color: var(--text-main);
+  border-bottom-color: var(--text-main);
+}
+
+.empty-state {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* Floating Top Button */
+.top-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Editorial Footer */
+footer {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px solid var(--line-bold);
+  color: var(--text-sub);
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.footer-brand {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--text-main);
+}
+
+.disclaimer-text {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .wrap { padding: 0 16px 60px; }
+  header { padding: 28px 0 20px; }
+  h1.main-title { font-size: 32px; }
+  .grid { grid-template-columns: 1fr; }
+  .floor-section-head { margin-top: 32px; }
 }
 </style>
 </head>
 <body>
-<header class="hero">
-  <nav class="slab">
-    <div class="container">
-      <p class="brand"><a href="#list">팝업 레이더</a><span>더현대 서울</span></p>
-      <time>{{.AsOfLabel}}</time>
-    </div>
-  </nav>
-  <div class="container hero-copy">
-    <h1>오늘의 팝업</h1>
-    <p class="lead">매일 달라지는 더현대 팝업, 층별로 한눈에.</p>
-    <div class="find">
-      <label class="visually-hidden" for="q">팝업 검색</label>
-      <input class="search" id="q" type="search" placeholder="이름, 메뉴, 장소" autocomplete="off">
-      <div class="tabs" id="floortabs">
-        <button class="floor-tab active" type="button" data-floor="all">전체</button>
-        <button class="floor-tab" type="button" data-floor="B1">B1</button>
-        <button class="floor-tab" type="button" data-floor="B2">B2</button>
-        <button class="floor-tab" type="button" data-floor="1F">1F</button>
-        <button class="floor-tab" type="button" data-floor="5F">5F</button>
-      </div>
-      <div class="tabs" id="chips">
-        <button class="kind active" type="button" data-cat="all">전체</button>
-        <button class="kind" type="button" data-cat="food">식품</button>
-        <button class="kind" type="button" data-cat="beauty">뷰티</button>
-        <button class="kind" type="button" data-cat="fashion">패션</button>
-        <button class="kind" type="button" data-cat="season">시즌</button>
-      </div>
-    </div>
-    <p class="sum">{{.Summary}} 평일 아침 08:49에 다시 수집합니다.</p>
+<div class="wrap">
+<header>
+  <div class="brand-eyebrow">
+    <span>THE HYUNDAI SEOUL</span>
+    <span class="right-badge">POP-UP RADAR · 2026</span>
+  </div>
+  <h1 class="main-title">POP-UP <span class="serif">RADAR</span></h1>
+  <div class="sub-desc">더현대 서울 팝업스토어 & 브랜드 큐레이션 매거진 · 매일 아침 달라지는 행사 한눈에 보기</div>
+  <div class="header-meta">
+    <div class="asof-badge">ISSUE {{.AsOfLabel}}</div>
+    <div class="summary-text">🔎 <b>{{.Summary}}</b> · 매일 평일 08:49 자동 수집(KST)</div>
   </div>
 </header>
 
-<section class="sheet">
-  <div class="container">
-    <p id="count"></p>
-    <div id="list"></div>
-    <p class="empty" id="empty" hidden>조건에 맞는 팝업이 없어요. 검색어나 필터를 바꿔 보세요.</p>
+<div class="controls-bar">
+  <div class="search-wrap">
+    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input class="search-input" id="q" type="search" placeholder="팝업명 · 브랜드 · 메뉴 · 층별 검색 (예: 닭강정, B1, 프라다, 타코야키)">
   </div>
-</section>
+  
+  <div class="floortabs" id="floortabs">
+    <button class="ftab active" data-floor="all">ALL (전체보기)</button>
+    <button class="ftab" data-floor="B1">B1 테이스티 & 이슈</button>
+    <button class="ftab" data-floor="B2">B2 영 & 트렌디</button>
+    <button class="ftab" data-floor="1F">1F 럭셔리 & 뷰티</button>
+    <button class="ftab" data-floor="4F">4F 라이프스타일</button>
+    <button class="ftab" data-floor="5F">5F 사운즈포레스트</button>
+  </div>
+  
+  <div class="chips" id="chips">
+    <button class="chip active" data-cat="all">#전체</button>
+    <button class="chip" data-cat="food">#🍽️ 식품/디저트</button>
+    <button class="chip" data-cat="beauty">#💄 뷰티</button>
+    <button class="chip" data-cat="fashion">#🛍️ 패션/라이프</button>
+    <button class="chip" data-cat="season">#🎄 크리스마스/시즌</button>
+  </div>
+</div>
+
+<div class="count-bar" id="count-bar">
+  <div id="count"></div>
+  <div style="font-size:12px; color:var(--text-muted)">매거진 에디토리얼 뷰</div>
+</div>
+
+<div id="list"></div>
+<div class="empty-state" id="empty" hidden>조건에 맞는 팝업스토어가 없어요. 검색어나 층별 필터를 바꿔 보세요.</div>
 
 <footer>
-  <div class="container">
-    <p class="mast">팝업 레이더</p>
-    <p>데이터 기준은 더현대 서울 공식, 팝업 플랫폼, 언론 보도입니다.</p>
-    <p class="fine">출처마다 안내가 다르면 두 정보를 모두 적습니다. 2026년 일정만 남겼고, 현장과 다를 수 있으니 방문 전 공식 안내를 확인하세요.</p>
+  <div class="footer-top">
+    <div class="footer-brand">THE HYUNDAI SEOUL × 29MAGAZINE STYLE</div>
+    <div>자동 수집 스케줄: 매일 평일 08:49 KST (GitHub Actions)</div>
+  </div>
+  <div>데이터 출처: 현대백화점 공식 공지(이슈 다이어리), 팝플리, 팝놀, 보도자료, 네이버 예약 전수 비교 검증</div>
+  <div class="disclaimer-text">
+    ⚠️ 출처별 안내가 상이한 경우(예: 올기 B1/B2, 피크퍼포먼스 종료일) 두 정보를 모두 투명하게 병기합니다. 연도(2026) 검증을 통과한 정보만 제공되며, 현장 사정에 따라 변동될 수 있습니다.
   </div>
 </footer>
+</div>
+
+<button class="top-btn" id="topBtn" aria-label="맨 위로 가기">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
 
 <script>
 const DATA = [
 {{- range .Floors}}
   {
     floor: "{{floorLabel .Floor}}",
-    name: {{.Name}},
-    brand: {{.Brand}},
+    name: {{.Name | printf "%q"}},
+    brand: {{.Brand | printf "%q"}},
     period: "{{periodKO .}}",
-    venue: {{.Venue}},
-    venueAlt: {{.VenueAlt}},
-    floorAlt: {{.FloorAlt}},
-    startAlt: {{.StartDateAlt}},
-    endAlt: {{.EndDateAlt}},
-    price: {{.Price}},
-    summary: {{.Summary}},
-    waiting: {{.Waiting}},
-    category: {{.Category}},
+    venue: {{.Venue | printf "%q"}},
+    venueAlt: {{.VenueAlt | printf "%q"}},
+    floorAlt: {{.FloorAlt | printf "%q"}},
+    startAlt: {{.StartDateAlt | printf "%q"}},
+    endAlt: {{.EndDateAlt | printf "%q"}},
+    price: {{.Price | printf "%q"}},
+    summary: {{.Summary | printf "%q"}},
+    waiting: {{.Waiting | printf "%q"}},
+    category: {{.Category | printf "%q"}},
     chip: "{{chip .Category}}",
     statuses: [{{range .Status}}"{{.}}",{{end}}],
     confidence: {{.Confidence}},
     sources: [
       {{- range .Sources}}
-      {name: {{.Name}}, url: {{.URL}}, claim: {{.Claim}}},
+      {name: {{.Name | printf "%q"}}, url: {{.URL | printf "%q"}}, claim: {{.Claim | printf "%q"}}},
       {{- end}}
     ]
   },
 {{- end}}
 ];
 
-const badgeText = {new:"오늘 오픈", ending:"종료 임박", closed:"오늘 마지막", deal:"한정 특가", conflict:"정보 상이"};
-const floorNames = {B1:["테이스티&이슈","식품"], B2:["영&트렌디","컬처"], "1F":["럭셔리&뷰티",""], "4F":["컬처&레저",""], "5F":["사운즈포레스트","스튜디오"]};
+const badgeText = {
+  new: "🔥 오늘 오픈!",
+  ending: "⏳ 종료 임박",
+  closed: "⏰ 오늘 마지막",
+  deal: "🛒 한정 특가",
+  conflict: "⚠️ 정보 상이"
+};
+const badgeClass = { new: "new", ending: "ending", deal: "deal", conflict: "warn", closed: "closed" };
+const floorNames = {
+  B1: "테이스티 & 이슈 · 식품관 F&B",
+  B2: "영 & 트렌디 · 스트리트 & 컬처",
+  "1F": "럭셔리 & 뷰티 · 명품관",
+  "2F": "모던 & 트렌디",
+  "4F": "라이프스타일 & 레저",
+  "5F": "사운즈 포레스트 & 스튜디오"
+};
 
 let curFloor = "all", curCat = "all", curQ = "";
 
-const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+}[c]));
 
-function sourceHTML(s){
-  if(s.url) return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>';
-  return '<span>'+esc(s.name)+'</span>';
-}
+function cardHTML(p) {
+  const isNew = p.statuses.includes("new");
+  const badges = ['<span class="bdg floor">#' + esc(p.floor) + '</span>']
+    .concat(p.statuses.map(s => '<span class="bdg ' + (badgeClass[s] || "") + '">' + (badgeText[s] || esc(s)) + '</span>'));
+  
+  let h = '<div class="card ' + (isNew ? 'is-new' : '') + '" data-floor="' + esc(p.floor) + '" data-cat="' + esc(p.category) + '">';
+  
+  h += '<div class="card-top">';
+  h += '  <div class="badges">' + badges.join("") + '</div>';
+  if (p.chip) h += '  <span class="category-label">' + esc(p.chip) + '</span>';
+  h += '</div>';
 
-function el(name, inner){ return "<" + name + ">" + inner + "</" + name + ">"; }
+  h += '<div class="pname">' + esc(p.name) + '</div>';
+  h += '<div class="period">' + esc(p.period) + '</div>';
 
-function cardHTML(p){
-  const states = p.statuses.map(s => '<span class="state'+(s==="new"?" is-open":"")+'" role="status">'+esc(badgeText[s]||s)+'</span>').join("");
-  let h = '<article class="entry" data-floor="'+esc(p.floor)+'" data-cat="'+esc(p.category)+'">';
-  h += el("h3", esc(p.name));
-  h += '<p class="when num">'+esc(p.period)+'</p>';
-  if(p.venue) h += '<p class="where">'+esc(p.venue)+'</p>';
-  if(p.price) h += '<p class="price num">'+esc(p.price)+'</p>';
-  if(states) h += '<p class="states">'+states+'</p>';
-  if(p.summary) h += '<p class="blurb">'+esc(p.summary)+'</p>';
-  if(p.waiting) h += '<p class="wait">'+esc(p.waiting)+'</p>';
-  if(p.venueAlt || p.floorAlt || p.endAlt){
+  if (p.summary) {
+    h += '<div class="summary-desc">' + esc(p.summary) + '</div>';
+  }
+
+  const metaRows = [];
+  if (p.venue) metaRows.push('<div class="meta-row"><span class="label">위치</span><span>' + esc(p.venue) + '</span></div>');
+  if (p.price) metaRows.push('<div class="meta-row"><span class="label">가격</span><span class="price-val">' + esc(p.price) + '</span></div>');
+
+  if (metaRows.length) {
+    h += '<div class="meta-box">' + metaRows.join("") + '</div>';
+  }
+
+  if (p.waiting) {
+    h += '<div class="waiting-box">⏱️ <b>웨이팅/이용:</b> ' + esc(p.waiting) + '</div>';
+  }
+
+  if (p.venueAlt || p.floorAlt || p.endAlt) {
     const bits = [];
-    if(p.venueAlt) bits.push("장소 "+p.venueAlt);
-    if(p.floorAlt) bits.push("층 "+p.floorAlt);
-    if(p.endAlt) bits.push("종료일 "+p.endAlt);
-    h += '<p class="differ">'+esc(bits.join(". "))+'. 출처마다 안내가 다릅니다.</p>';
+    if (p.venueAlt) bits.push("장소: " + p.venueAlt);
+    if (p.floorAlt) bits.push("층: " + p.floorAlt);
+    if (p.endAlt) bits.push("종료일: " + p.endAlt);
+    h += '<div class="alt-box">⚠️ <b>출처별 상이:</b> ' + esc(bits.join(" · ")) + '</div>';
   }
-  if(p.sources.length){
-    h += '<p class="sources">출처 '+p.sources.map(sourceHTML).join(" ")+'</p>';
+
+  if (p.sources && p.sources.length) {
+    h += '<div class="card-foot"><span>출처</span><span>' + p.sources.map(s => s.url
+      ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + '</a>'
+      : esc(s.name)).join(" · ") + '</span></div>';
   }
-  return h + '</article>';
+
+  return h + '</div>';
 }
 
-function render(){
+function render() {
   const list = document.getElementById("list");
   const shown = DATA.filter(p =>
-    (curFloor==="all" || p.floor===curFloor) &&
-    (curCat==="all" || p.category===curCat) &&
-    (!curQ || (p.name+" "+p.brand+" "+p.venue+" "+p.summary+" "+p.price+" "+p.floor).toLowerCase().includes(curQ))
+    (curFloor === "all" || p.floor === curFloor) &&
+    (curCat === "all" || p.category === curCat) &&
+    (!curQ || (p.name + " " + p.brand + " " + p.venue + " " + p.summary + " " + p.price + " " + p.floor).toLowerCase().includes(curQ))
   );
+
   const byFloor = {};
   shown.forEach(p => (byFloor[p.floor] ||= []).push(p));
-  const order = ["B2","B1","1F","2F","4F","5F","?"];
+
+  const order = ["B2", "B1", "1F", "2F", "4F", "5F", "?"];
   let html = "";
+
   order.forEach(f => {
-    if(!byFloor[f]) return;
-    const pair = floorNames[f] || ["층 미확인", ""];
-    const zone = (pair[1] ? pair[1] + ", " : "") + byFloor[f].length + "건";
-    const code = f === "?" ? "" : '<p class="code">'+esc(f)+'</p>';
-    html += '<div class="floor" id="floor-'+esc(f)+'">';
-    html += '<div class="floor-head'+(f === "?" ? " no-code" : "")+'">'+code+'<div>'+el("h2", esc(pair[0]))+'<p class="zone">'+esc(zone)+'</p></div></div>';
-    html += byFloor[f].map(cardHTML).join("");
+    if (!byFloor[f] || byFloor[f].length === 0) return;
+    html += '<div class="floor-section-head">';
+    html += '  <div class="head-left">';
+    html += '    <span class="floor-code">' + esc(f) + '</span>';
+    html += '    <span class="floor-name">' + esc(floorNames[f] || "층 정보") + '</span>';
+    html += '  </div>';
+    html += '  <span class="floor-count">' + byFloor[f].length + '개 팝업</span>';
     html += '</div>';
+    html += '<div class="grid">' + byFloor[f].map(cardHTML).join("") + '</div>';
   });
+
   list.innerHTML = html;
   document.getElementById("empty").hidden = shown.length > 0;
-  document.getElementById("count").textContent = "표시 "+shown.length+"건, 전체 "+DATA.length+"건";
+  document.getElementById("count").innerHTML = '총 <span class="total-highlight">' + shown.length + '</span>개의 팝업스토어 (전체 ' + DATA.length + '개 중)';
 }
 
-document.getElementById("q").addEventListener("input", e => { curQ = e.target.value.trim().toLowerCase(); render(); });
-document.querySelectorAll(".floor-tab").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".floor-tab").forEach(x=>x.classList.remove("active"));
-  b.classList.add("active"); curFloor = b.dataset.floor; render();
+document.getElementById("q").addEventListener("input", e => {
+  curQ = e.target.value.trim().toLowerCase();
+  render();
+});
+
+document.querySelectorAll(".ftab").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".ftab").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  curFloor = b.dataset.floor;
+  render();
 }));
-document.querySelectorAll(".kind").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".kind").forEach(x=>x.classList.remove("active"));
-  b.classList.add("active"); curCat = b.dataset.cat; render();
+
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  curCat = b.dataset.cat;
+  render();
 }));
+
+// Floating Top Button
+const topBtn = document.getElementById("topBtn");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    topBtn.classList.add("visible");
+  } else {
+    topBtn.classList.remove("visible");
+  }
+});
+topBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 render();
 </script>
 </body>
