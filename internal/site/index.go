@@ -1,174 +1,229 @@
 package site
 
 // indexTmpl 은 단일 파일로 배포 가능한 index.html 템플릿이다.
-// 브라우저에서 popups.json 을 추가로 받아 검색/필터를 수행한다.
+// 브라우저에서 이 파일에 박힌 목록으로 검색과 필터를 수행한다.
 const indexTmpl = `<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>THE HYUNDAI SEOUL POP-UP RADAR · 매일 달라지는 더현대 팝업 층별 레이더</title>
-<meta name="description" content="더현대 서울 팝업을 층별로 한눈에. 매일 아침 8시 49분 자동 업데이트.">
+<title>더현대 서울 팝업 레이더</title>
+<meta name="description" content="더현대 서울 팝업을 층별로 모은 목록. 평일 아침 08:49에 다시 수집합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0f1115; --card:#171a21; --card2:#1d212b; --line:#2a2f3c;
-  --text:#f2f4f8; --sub:#9aa3b2; --gold:#d8b46a; --gold2:#b8944e;
-  --new:#ff5d5d; --end:#ffb020; --deal:#3ddc97; --warn:#ff9f43; --info:#5aa2ff;
+{{cssStamp}}
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --control: 48px;
+  --tracking-figure: -0.04em;
+  --color-paper: oklch(84% 0.012 245); --color-paper-2: oklch(81% 0.012 245); --color-paper-3: oklch(77% 0.012 245);
+  --color-ink: oklch(16% 0.020 245); --color-ink-2: oklch(24% 0.018 245); --color-muted: oklch(38% 0.016 245);
+  --color-rule: oklch(73% 0.013 240); --color-rule-2: oklch(32% 0.018 240);
+  --color-accent: oklch(45% 0.180 350); --color-accent-2: oklch(37% 0.160 350); --color-accent-ink: oklch(97% 0.006 245); --color-focus: oklch(46% 0.190 350);
+  --color-sheet: oklch(93.5% 0.008 245);
+  --font-display: "Hanken Grotesk", "Noto Sans KR", sans-serif;
+  --font-body: "Newsreader", "Noto Serif KR", serif;
+  --font-outlier: "IBM Plex Mono", "Noto Sans KR", monospace;
+  --radius-card: 0; --radius-pill: 2px; --rule-hair: 1px; --rule-bar: 2px; --shadow-card: none;
+  --tracking-display: -0.02em; --display-weight: 600;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,-apple-system,sans-serif;line-height:1.55}
-a{color:var(--gold);text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 16px 60px}
-header{padding:34px 0 10px;text-align:center}
-.eyebrow{color:var(--gold);font-size:12px;letter-spacing:.35em;font-weight:700}
-h1{font-size:clamp(26px,5vw,44px);font-weight:800;letter-spacing:.02em;margin:8px 0 4px}
-h1 .thin{font-weight:300;color:var(--sub)}
-.tagline{color:var(--sub);font-size:14px}
-.asof{display:inline-block;margin-top:12px;font-size:13px;color:var(--gold2);border:1px solid var(--gold2);border-radius:999px;padding:4px 14px}
-.summary{margin-top:10px;font-size:13px;color:var(--sub)}
-.summary b{color:var(--new)}
-.controls{position:sticky;top:0;z-index:10;background:linear-gradient(var(--bg) 82%,transparent);padding:14px 0 10px}
-.search{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px 16px;font-size:15px;outline:none}
-.search:focus{border-color:var(--gold2)}
-.floortabs{display:flex;gap:8px;margin-top:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-.floortabs::-webkit-scrollbar{display:none}
-.ftab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
-.ftab:hover{color:var(--text)}
-.ftab.active{background:var(--gold);border-color:var(--gold);color:#16130b}
-.chips{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:transparent;color:var(--sub);border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}
-.chip.active{border-color:var(--gold2);color:var(--gold);background:rgba(216,180,106,.08)}
-.count{margin:16px 2px 10px;font-size:13px;color:var(--sub)}
-.floorhead{display:flex;align-items:center;gap:10px;margin:26px 2px 12px}
-.floorhead .fb{background:var(--gold);color:#16130b;font-weight:800;border-radius:8px;padding:3px 12px;font-size:15px}
-.floorhead .fname{color:var(--sub);font-size:13.5px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:.15s;position:relative;overflow:hidden}
-.card:hover{border-color:var(--gold2);transform:translateY(-2px)}
-.card.is-new{border-color:rgba(255,93,93,.55)}
-.card.is-new::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--new)}
-.badges{display:flex;gap:6px;flex-wrap:wrap}
-.bdg{font-size:11px;font-weight:700;border-radius:6px;padding:2px 8px;background:var(--card2);color:var(--sub);border:1px solid var(--line)}
-.bdg.floor{background:rgba(216,180,106,.14);color:var(--gold);border-color:rgba(216,180,106,.4);font-size:12px}
-.bdg.new{background:rgba(255,93,93,.15);color:var(--new);border-color:rgba(255,93,93,.45)}
-.bdg.ending{background:rgba(255,176,32,.12);color:var(--end);border-color:rgba(255,176,32,.4)}
-.bdg.deal{background:rgba(61,220,151,.12);color:var(--deal);border-color:rgba(61,220,151,.4)}
-.bdg.warn{background:rgba(255,159,67,.12);color:var(--warn);border-color:rgba(255,159,67,.45)}
-.bdg.closed{background:rgba(154,163,178,.12);color:var(--sub)}
-.pname{font-size:17px;font-weight:750;letter-spacing:-.01em}
-.period{font-size:13px;color:var(--gold2);font-weight:600}
-.meta{font-size:13px;color:var(--sub)}
-.meta .price{color:var(--text);font-weight:650}
-.waiting{font-size:12.5px;color:var(--info);background:rgba(90,162,255,.08);border:1px dashed rgba(90,162,255,.4);border-radius:8px;padding:6px 9px}
-.alt{font-size:12.5px;color:var(--warn);background:rgba(255,159,67,.07);border-radius:8px;padding:6px 9px}
-.src{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--sub)}
-.src a{color:var(--sub);border-bottom:1px dotted var(--sub)}
-.src a:hover{color:var(--gold)}
-.empty{padding:50px 0;text-align:center;color:var(--sub)}
-footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--sub);font-size:12.5px;text-align:center}
-.disclaimer{margin-top:6px;font-size:11.5px;color:#6b7382}
-@media(max-width:640px){ .grid{grid-template-columns:1fr} header{padding-top:26px} }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-3xl); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: inherit; text-decoration-color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1 { max-width: 20ch; font-size: var(--text-display); } h2 { max-width: 30ch; font-size: var(--text-section); } h3 { max-width: 40ch; font-size: var(--text-title); line-height: 1.2; }
+.lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; }
+p { margin: 0; text-wrap: pretty; }
+p:not([class]) { max-width: 65ch; }
+img, video { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; color: inherit; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.num { font-family: var(--font-outlier); font-variant-numeric: tabular-nums; font-weight: 500; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.slab { background: var(--color-ink); color: var(--color-sheet); }
+.slab .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-lg); min-height: var(--space-2xl); }
+.brand { display: flex; gap: var(--space-md); align-items: baseline; margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); letter-spacing: var(--tracking-display); }
+.brand a { color: var(--color-sheet); text-decoration: underline; text-decoration-color: var(--color-accent); white-space: nowrap; }
+.brand span { font-family: var(--font-body); font-weight: 400; font-size: var(--text-md); letter-spacing: 0; }
+.slab time { font-family: var(--font-outlier); font-size: var(--text-sm); font-weight: 500; font-variant-numeric: tabular-nums; }
+.slab :focus-visible { outline-color: var(--color-sheet); }
+.hero-copy { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+.lead { margin-top: var(--space-md); color: var(--color-ink-2); }
+.find { position: sticky; top: 0; z-index: var(--z-sticky); display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-lg); padding-block: var(--space-sm); background: var(--color-paper); }
+.search { width: 100%; min-height: var(--control); padding: var(--space-sm) var(--space-md); background: var(--color-sheet); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); font-family: var(--font-body); font-size: var(--text-md); }
+.search::placeholder { color: var(--color-muted); }
+.tabs { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.floor-tab, .kind { min-height: var(--control); padding: var(--space-sm) var(--space-md); border: 0; border-bottom: var(--rule-bar) solid transparent; border-radius: 0; background: transparent; color: var(--color-ink-2); font-family: var(--font-display); font-weight: 500; font-size: var(--text-sm); white-space: nowrap; cursor: pointer; }
+.floor-tab:hover, .kind:hover, .search:hover { background: var(--color-paper-3); }
+.floor-tab:active, .kind:active { background: var(--color-paper-2); }
+.floor-tab.active, .kind.active { color: var(--color-ink); border-bottom-color: var(--color-rule-2); background: transparent; }
+button:disabled, input:disabled { color: var(--color-muted); background: var(--color-paper-3); cursor: not-allowed; }
+.sum { margin-top: var(--space-sm); color: var(--color-ink-2); }
+.sheet { background: var(--color-sheet); border-top: var(--rule-bar) solid var(--color-ink); padding-block: var(--space-2xl); }
+#count { color: var(--color-muted); font-size: var(--text-sm); margin-bottom: var(--space-lg); }
+.floor { margin-top: var(--space-2xl); }
+.floor:first-child { margin-top: 0; }
+.floor-head { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-lg); align-items: center; border-bottom: var(--rule-bar) solid var(--color-rule-2); padding-bottom: var(--space-sm); }
+.floor-head.no-code { grid-template-columns: minmax(0, 1fr); }
+.code { margin: 0; font-family: var(--font-outlier); font-weight: 500; font-size: var(--text-section); letter-spacing: var(--tracking-figure); line-height: 1; color: var(--color-ink); font-variant-numeric: tabular-nums; }
+.zone { margin-top: var(--space-2xs); color: var(--color-muted); font-size: var(--text-sm); }
+.entry { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--gap-columns); row-gap: var(--space-2xs); align-items: baseline; padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+.entry h3 { grid-column: 1; }
+.when { grid-column: 2; font-size: var(--text-sm); }
+.where { grid-column: 3; color: var(--color-ink-2); }
+.price { grid-column: 4; text-align: right; font-size: var(--text-sm); }
+.states, .blurb, .wait, .differ, .sources { grid-column: 1 / -1; }
+.state { font-size: var(--text-sm); color: var(--color-muted); margin-right: var(--space-sm); }
+.state.is-open { color: var(--color-accent-2); }
+.blurb { color: var(--color-ink-2); }
+.wait, .differ, .sources { font-size: var(--text-sm); color: var(--color-ink-2); }
+.sources a { margin-right: var(--space-md); }
+.empty { padding-block: var(--space-xl); color: var(--color-ink-2); }
+.mast { font-family: var(--font-display); font-weight: 600; font-size: var(--text-section); letter-spacing: var(--tracking-display); line-height: 1.05; margin-bottom: var(--space-md); }
+footer { padding-top: var(--space-2xl); padding-bottom: var(--space-xl); }
+.fine { margin-top: var(--space-sm); max-width: 65ch; color: var(--color-ink-2); font-size: var(--text-sm); }
+@media (max-width: 60rem) {
+  :root { --gutter: 24px; }
+  .entry { grid-template-columns: minmax(0, 1fr); }
+  .entry h3, .when, .where, .price { grid-column: 1; }
+  .price { text-align: start; }
+}
+@media (max-width: 40rem) { :root { --gutter: 16px; --gap-columns: 16px; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <div class="eyebrow">THE HYUNDAI SEOUL</div>
-  <h1>POP-UP <span class="thin">RADAR</span></h1>
-  <div class="tagline">매일 달라지는 더현대 팝업, 층별로 한눈에</div>
-  <div class="asof">📅 {{.AsOfLabel}}</div>
-  <div class="summary">🔎 <b>{{.Summary}}</b> · 매일 평일 아침 08:49 자동 수집(KST)</div>
+<header class="hero">
+  <nav class="slab">
+    <div class="container">
+      <p class="brand"><a href="#list">팝업 레이더</a><span>더현대 서울</span></p>
+      <time>{{.AsOfLabel}}</time>
+    </div>
+  </nav>
+  <div class="container hero-copy">
+    <h1>오늘의 팝업</h1>
+    <p class="lead">매일 달라지는 더현대 팝업, 층별로 한눈에.</p>
+    <div class="find">
+      <label class="visually-hidden" for="q">팝업 검색</label>
+      <input class="search" id="q" type="search" placeholder="이름, 메뉴, 장소" autocomplete="off">
+      <div class="tabs" id="floortabs">
+        <button class="floor-tab active" type="button" data-floor="all">전체</button>
+        <button class="floor-tab" type="button" data-floor="B1">B1</button>
+        <button class="floor-tab" type="button" data-floor="B2">B2</button>
+        <button class="floor-tab" type="button" data-floor="1F">1F</button>
+        <button class="floor-tab" type="button" data-floor="5F">5F</button>
+      </div>
+      <div class="tabs" id="chips">
+        <button class="kind active" type="button" data-cat="all">전체</button>
+        <button class="kind" type="button" data-cat="food">식품</button>
+        <button class="kind" type="button" data-cat="beauty">뷰티</button>
+        <button class="kind" type="button" data-cat="fashion">패션</button>
+        <button class="kind" type="button" data-cat="season">시즌</button>
+      </div>
+    </div>
+    <p class="sum">{{.Summary}} 평일 아침 08:49에 다시 수집합니다.</p>
+  </div>
 </header>
 
-<div class="controls">
-  <input class="search" id="q" type="search" placeholder="팝업명 · 브랜드 · 메뉴 · 위치 검색 (예: 닭강정, B1, 프라다)">
-  <div class="floortabs" id="floortabs">
-    <button class="ftab active" data-floor="all">전체보기</button>
-    <button class="ftab" data-floor="B1">B1 테이스티&이슈</button>
-    <button class="ftab" data-floor="B2">B2 영&트렌디</button>
-    <button class="ftab" data-floor="1F">1F 럭셔리&뷰티</button>
-    <button class="ftab" data-floor="5F">5F 사운즈포레스트</button>
+<section class="sheet">
+  <div class="container">
+    <p id="count"></p>
+    <div id="list"></div>
+    <p class="empty" id="empty" hidden>조건에 맞는 팝업이 없어요. 검색어나 필터를 바꿔 보세요.</p>
   </div>
-  <div class="chips" id="chips">
-    <button class="chip active" data-cat="all">전체</button>
-    <button class="chip" data-cat="food">🍽️ 식품/디저트</button>
-    <button class="chip" data-cat="beauty">💄 뷰티</button>
-    <button class="chip" data-cat="fashion">🛍️ 패션/라이프</button>
-    <button class="chip" data-cat="season">🎄 시즌/크리스마스</button>
-  </div>
-</div>
-
-<div class="count" id="count"></div>
-<div id="list"></div>
-<div class="empty" id="empty" hidden>조건에 맞는 팝업이 없어요. 검색어나 필터를 바꿔 보세요.</div>
+</section>
 
 <footer>
-  데이터 기준: 더현대 서울 공식·팝업 플랫폼·언론 보도 수집 결과 · 자동 업데이트 매일 평일 08:49 KST<br>
-  <span class="disclaimer">⚠️ 출처마다 안내가 다른 경우 두 정보를 모두 표기합니다. 연도(2026) 검증을 마친 정보만 수집하며, 현장 상황과 다를 수 있으니 방문 전 공식 안내를 확인하세요.</span>
+  <div class="container">
+    <p class="mast">팝업 레이더</p>
+    <p>데이터 기준은 더현대 서울 공식, 팝업 플랫폼, 언론 보도입니다.</p>
+    <p class="fine">출처마다 안내가 다르면 두 정보를 모두 적습니다. 2026년 일정만 남겼고, 현장과 다를 수 있으니 방문 전 공식 안내를 확인하세요.</p>
+  </div>
 </footer>
-</div>
 
 <script>
 const DATA = [
 {{- range .Floors}}
   {
     floor: "{{floorLabel .Floor}}",
-    name: {{.Name | printf "%q"}},
-    brand: {{.Brand | printf "%q"}},
+    name: {{.Name}},
+    brand: {{.Brand}},
     period: "{{periodKO .}}",
-    venue: {{.Venue | printf "%q"}},
-    venueAlt: {{.VenueAlt | printf "%q"}},
-    floorAlt: {{.FloorAlt | printf "%q"}},
-    startAlt: {{.StartDateAlt | printf "%q"}},
-    endAlt: {{.EndDateAlt | printf "%q"}},
-    price: {{.Price | printf "%q"}},
-    summary: {{.Summary | printf "%q"}},
-    waiting: {{.Waiting | printf "%q"}},
-    category: {{.Category | printf "%q"}},
+    venue: {{.Venue}},
+    venueAlt: {{.VenueAlt}},
+    floorAlt: {{.FloorAlt}},
+    startAlt: {{.StartDateAlt}},
+    endAlt: {{.EndDateAlt}},
+    price: {{.Price}},
+    summary: {{.Summary}},
+    waiting: {{.Waiting}},
+    category: {{.Category}},
     chip: "{{chip .Category}}",
     statuses: [{{range .Status}}"{{.}}",{{end}}],
     confidence: {{.Confidence}},
     sources: [
       {{- range .Sources}}
-      {name: {{.Name | printf "%q"}}, url: {{.URL | printf "%q"}}, claim: {{.Claim | printf "%q"}}},
+      {name: {{.Name}}, url: {{.URL}}, claim: {{.Claim}}},
       {{- end}}
     ]
   },
 {{- end}}
 ];
 
-const badgeText = {new:"🔥 오늘 오픈!", ending:"⏳ 종료 임박", closed:"⏰ 오늘 마지막", deal:"🛒 한정 특가", conflict:"⚠️ 정보 상이 확인"};
-const badgeClass = {new:"new", ending:"ending", deal:"deal", conflict:"warn", closed:"closed"};
-const floorNames = {B1:"테이스티&이슈 · F&B", B2:"영&트렌디 · 컬처", "1F":"럭셔리&뷰티", "4F":"컬처&레저", "5F":"사운즈포레스트&스튜디오"};
+const badgeText = {new:"오늘 오픈", ending:"종료 임박", closed:"오늘 마지막", deal:"한정 특가", conflict:"정보 상이"};
+const floorNames = {B1:["테이스티&이슈","식품"], B2:["영&트렌디","컬처"], "1F":["럭셔리&뷰티",""], "4F":["컬처&레저",""], "5F":["사운즈포레스트","스튜디오"]};
 
 let curFloor = "all", curCat = "all", curQ = "";
 
 const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
+function sourceHTML(s){
+  if(s.url) return '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>';
+  return '<span>'+esc(s.name)+'</span>';
+}
+
+function el(name, inner){ return "<" + name + ">" + inner + "</" + name + ">"; }
+
 function cardHTML(p){
-  const badges = ['<span class="bdg floor">'+esc(p.floor)+'</span>']
-    .concat(p.statuses.map(s => '<span class="bdg '+(badgeClass[s]||"")+'">'+(badgeText[s]||esc(s))+'</span>'));
-  let h = '<div class="card '+(p.statuses.includes("new")?"is-new":"")+'" data-floor="'+esc(p.floor)+'" data-cat="'+esc(p.category)+'" data-text="'+esc([p.name,p.brand,p.venue,p.summary,p.price,p.floor].join(" "))+'">';
-  h += '<div class="badges">'+badges.join("")+'</div>';
-  h += '<div class="pname">'+esc(p.name)+'</div>';
-  h += '<div class="period">'+esc(p.period)+'</div>';
-  if(p.venue) h += '<div class="meta">📍 '+esc(p.venue)+'</div>';
-  if(p.price) h += '<div class="meta">💰 <span class="price">'+esc(p.price)+'</span></div>';
-  if(p.summary) h += '<div class="meta">'+esc(p.summary)+'</div>';
-  if(p.waiting) h += '<div class="waiting">⏱️ '+esc(p.waiting)+'</div>';
+  const states = p.statuses.map(s => '<span class="state'+(s==="new"?" is-open":"")+'" role="status">'+esc(badgeText[s]||s)+'</span>').join("");
+  let h = '<article class="entry" data-floor="'+esc(p.floor)+'" data-cat="'+esc(p.category)+'">';
+  h += el("h3", esc(p.name));
+  h += '<p class="when num">'+esc(p.period)+'</p>';
+  if(p.venue) h += '<p class="where">'+esc(p.venue)+'</p>';
+  if(p.price) h += '<p class="price num">'+esc(p.price)+'</p>';
+  if(states) h += '<p class="states">'+states+'</p>';
+  if(p.summary) h += '<p class="blurb">'+esc(p.summary)+'</p>';
+  if(p.waiting) h += '<p class="wait">'+esc(p.waiting)+'</p>';
   if(p.venueAlt || p.floorAlt || p.endAlt){
     const bits = [];
-    if(p.venueAlt) bits.push("장소 병기: "+p.venueAlt);
-    if(p.floorAlt) bits.push("층 병기: "+p.floorAlt);
-    if(p.endAlt) bits.push("종료일 병기: "+p.endAlt);
-    h += '<div class="alt">⚠️ '+esc(bits.join(" · "))+' — 출처별 안내가 다릅니다.</div>';
+    if(p.venueAlt) bits.push("장소 "+p.venueAlt);
+    if(p.floorAlt) bits.push("층 "+p.floorAlt);
+    if(p.endAlt) bits.push("종료일 "+p.endAlt);
+    h += '<p class="differ">'+esc(bits.join(". "))+'. 출처마다 안내가 다릅니다.</p>';
   }
   if(p.sources.length){
-    h += '<div class="src">출처: ' + p.sources.map(s => s.url
-      ? '<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>'
-      : esc(s.name)).join(" · ") + '</div>';
+    h += '<p class="sources">출처 '+p.sources.map(sourceHTML).join(" ")+'</p>';
   }
-  return h + '</div>';
+  return h + '</article>';
 }
 
 function render(){
@@ -184,21 +239,26 @@ function render(){
   let html = "";
   order.forEach(f => {
     if(!byFloor[f]) return;
-    html += '<div class="floorhead"><span class="fb">'+esc(f)+'</span><span class="fname">'+esc(floorNames[f]||"층 미확인")+' · '+byFloor[f].length+'건</span></div>';
-    html += '<div class="grid">' + byFloor[f].map(cardHTML).join("") + '</div>';
+    const pair = floorNames[f] || ["층 미확인", ""];
+    const zone = (pair[1] ? pair[1] + ", " : "") + byFloor[f].length + "건";
+    const code = f === "?" ? "" : '<p class="code">'+esc(f)+'</p>';
+    html += '<div class="floor" id="floor-'+esc(f)+'">';
+    html += '<div class="floor-head'+(f === "?" ? " no-code" : "")+'">'+code+'<div>'+el("h2", esc(pair[0]))+'<p class="zone">'+esc(zone)+'</p></div></div>';
+    html += byFloor[f].map(cardHTML).join("");
+    html += '</div>';
   });
   list.innerHTML = html;
   document.getElementById("empty").hidden = shown.length > 0;
-  document.getElementById("count").textContent = "총 "+shown.length+"개 팝업 표시 중 (전체 "+DATA.length+"개)";
+  document.getElementById("count").textContent = "표시 "+shown.length+"건, 전체 "+DATA.length+"건";
 }
 
 document.getElementById("q").addEventListener("input", e => { curQ = e.target.value.trim().toLowerCase(); render(); });
-document.querySelectorAll(".ftab").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".ftab").forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".floor-tab").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".floor-tab").forEach(x=>x.classList.remove("active"));
   b.classList.add("active"); curFloor = b.dataset.floor; render();
 }));
-document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".kind").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".kind").forEach(x=>x.classList.remove("active"));
   b.classList.add("active"); curCat = b.dataset.cat; render();
 }));
 render();
