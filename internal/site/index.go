@@ -104,6 +104,7 @@ h1.main-title .serif {
   color: var(--text-sub);
   line-height: 1.5;
   margin-bottom: 16px;
+  word-break: keep-all;
 }
 
 .header-meta {
@@ -226,8 +227,8 @@ h1.main-title .serif {
   background: #ffffff;
   color: var(--text-sub);
   border-radius: 4px;
-  padding: 5px 12px;
-  font-size: 12px;
+  padding: 6px 13px;
+  font-size: 12.5px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -398,6 +399,8 @@ h1.main-title .serif {
   letter-spacing: -0.02em;
   color: var(--text-main);
   line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .period {
@@ -411,6 +414,7 @@ h1.main-title .serif {
   font-size: 13.5px;
   color: var(--text-body);
   line-height: 1.6;
+  word-break: keep-all;
 }
 
 .meta-box {
@@ -426,7 +430,7 @@ h1.main-title .serif {
 
 .meta-row {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   align-items: baseline;
 }
 
@@ -449,6 +453,7 @@ h1.main-title .serif {
   border-radius: 0 3px 3px 0;
   padding: 8px 12px;
   line-height: 1.45;
+  word-break: keep-all;
 }
 
 .alt-box {
@@ -459,6 +464,7 @@ h1.main-title .serif {
   border-radius: 0 3px 3px 0;
   padding: 8px 12px;
   line-height: 1.45;
+  word-break: keep-all;
 }
 
 .card-foot {
@@ -633,24 +639,24 @@ const DATA = [
 {{- range .Floors}}
   {
     floor: "{{floorLabel .Floor}}",
-    name: {{.Name | printf "%q"}},
-    brand: {{.Brand | printf "%q"}},
+    name: {{.Name}},
+    brand: {{.Brand}},
     period: "{{periodKO .}}",
-    venue: {{.Venue | printf "%q"}},
-    venueAlt: {{.VenueAlt | printf "%q"}},
-    floorAlt: {{.FloorAlt | printf "%q"}},
-    startAlt: {{.StartDateAlt | printf "%q"}},
-    endAlt: {{.EndDateAlt | printf "%q"}},
-    price: {{.Price | printf "%q"}},
-    summary: {{.Summary | printf "%q"}},
-    waiting: {{.Waiting | printf "%q"}},
-    category: {{.Category | printf "%q"}},
+    venue: {{.Venue}},
+    venueAlt: {{.VenueAlt}},
+    floorAlt: {{.FloorAlt}},
+    startAlt: {{.StartDateAlt}},
+    endAlt: {{.EndDateAlt}},
+    price: {{.Price}},
+    summary: {{.Summary}},
+    waiting: {{.Waiting}},
+    category: {{.Category}},
     chip: "{{chip .Category}}",
     statuses: [{{range .Status}}"{{.}}",{{end}}],
     confidence: {{.Confidence}},
     sources: [
       {{- range .Sources}}
-      {name: {{.Name | printf "%q"}}, url: {{.URL | printf "%q"}}, claim: {{.Claim | printf "%q"}}},
+      {name: {{.Name}}, url: {{.URL}}, claim: {{.Claim}}},
       {{- end}}
     ]
   },
@@ -671,7 +677,8 @@ const floorNames = {
   "1F": "럭셔리 & 뷰티 · 명품관",
   "2F": "모던 & 트렌디",
   "4F": "라이프스타일 & 레저",
-  "5F": "사운즈 포레스트 & 스튜디오"
+  "5F": "사운즈 포레스트 & 스튜디오",
+  "?": "기타 · 층 정보 확인 중"
 };
 
 let curFloor = "all", curCat = "all", curQ = "";
@@ -682,7 +689,8 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({
 
 function cardHTML(p) {
   const isNew = p.statuses.includes("new");
-  const badges = ['<span class="bdg floor">#' + esc(p.floor) + '</span>']
+  const floorBadgeText = p.floor === "?" ? "#기타" : "#" + p.floor;
+  const badges = ['<span class="bdg floor">' + esc(floorBadgeText) + '</span>']
     .concat(p.statuses.map(s => '<span class="bdg ' + (badgeClass[s] || "") + '">' + (badgeText[s] || esc(s)) + '</span>'));
   
   let h = '<div class="card ' + (isNew ? 'is-new' : '') + '" data-floor="' + esc(p.floor) + '" data-cat="' + esc(p.category) + '">';
@@ -695,27 +703,27 @@ function cardHTML(p) {
   h += '<div class="pname">' + esc(p.name) + '</div>';
   h += '<div class="period">' + esc(p.period) + '</div>';
 
-  if (p.summary) {
-    h += '<div class="summary-desc">' + esc(p.summary) + '</div>';
+  if (p.summary && p.summary.trim()) {
+    h += '<div class="summary-desc">' + esc(p.summary.trim()) + '</div>';
   }
 
   const metaRows = [];
-  if (p.venue) metaRows.push('<div class="meta-row"><span class="label">위치</span><span>' + esc(p.venue) + '</span></div>');
-  if (p.price) metaRows.push('<div class="meta-row"><span class="label">가격</span><span class="price-val">' + esc(p.price) + '</span></div>');
+  if (p.venue && p.venue.trim()) metaRows.push('<div class="meta-row"><span class="label">위치</span><span>' + esc(p.venue.trim()) + '</span></div>');
+  if (p.price && p.price.trim()) metaRows.push('<div class="meta-row"><span class="label">가격</span><span class="price-val">' + esc(p.price.trim()) + '</span></div>');
 
   if (metaRows.length) {
     h += '<div class="meta-box">' + metaRows.join("") + '</div>';
   }
 
-  if (p.waiting) {
-    h += '<div class="waiting-box">⏱️ <b>웨이팅/이용:</b> ' + esc(p.waiting) + '</div>';
+  if (p.waiting && p.waiting.trim()) {
+    h += '<div class="waiting-box">⏱️ <b>웨이팅/이용:</b> ' + esc(p.waiting.trim()) + '</div>';
   }
 
-  if (p.venueAlt || p.floorAlt || p.endAlt) {
-    const bits = [];
-    if (p.venueAlt) bits.push("장소: " + p.venueAlt);
-    if (p.floorAlt) bits.push("층: " + p.floorAlt);
-    if (p.endAlt) bits.push("종료일: " + p.endAlt);
+  const bits = [];
+  if (p.venueAlt && p.venueAlt.trim()) bits.push("장소: " + p.venueAlt.trim());
+  if (p.floorAlt && p.floorAlt.trim()) bits.push("층: " + p.floorAlt.trim());
+  if (p.endAlt && p.endAlt.trim()) bits.push("종료일: " + p.endAlt.trim());
+  if (bits.length > 0) {
     h += '<div class="alt-box">⚠️ <b>출처별 상이:</b> ' + esc(bits.join(" · ")) + '</div>';
   }
 
@@ -739,14 +747,15 @@ function render() {
   const byFloor = {};
   shown.forEach(p => (byFloor[p.floor] ||= []).push(p));
 
-  const order = ["B2", "B1", "1F", "2F", "4F", "5F", "?"];
+  const order = ["B1", "B2", "1F", "2F", "4F", "5F", "?"];
   let html = "";
 
   order.forEach(f => {
     if (!byFloor[f] || byFloor[f].length === 0) return;
+    const isUnknown = f === "?";
     html += '<div class="floor-section-head">';
     html += '  <div class="head-left">';
-    html += '    <span class="floor-code">' + esc(f) + '</span>';
+    html += '    <span class="floor-code">' + esc(isUnknown ? "ETC" : f) + '</span>';
     html += '    <span class="floor-name">' + esc(floorNames[f] || "층 정보") + '</span>';
     html += '  </div>';
     html += '  <span class="floor-count">' + byFloor[f].length + '개 팝업</span>';
