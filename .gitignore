@@ -5,3 +5,4 @@ out/*
 # 로컬 실행 부산물
 *.test
 /tmp/
+.hallmark/
