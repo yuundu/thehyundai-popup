@@ -8,7 +8,7 @@ const indexTmpl = `<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>THE HYUNDAI SEOUL · POP-UP RADAR | 매거진 에디션</title>
-<meta name="description" content="더현대 서울 팝업스토어를 층별로 한눈에. 매일 아침 08:49 KST 자동 업데이트되는 에디토리얼 팝업 매거진.">
+<meta name="description" content="더현대 서울 팝업스토어를 층별로 한눈에. 매일 아침 07:30 KST 자동 업데이트되는 에디토리얼 팝업 매거진.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
@@ -577,7 +577,7 @@ footer {
   <div class="sub-desc">더현대 서울 팝업스토어 & 브랜드 큐레이션 매거진 · 매일 아침 달라지는 행사 한눈에 보기</div>
   <div class="header-meta">
     <div class="asof-badge">ISSUE {{.AsOfLabel}}</div>
-    <div class="summary-text">🔎 <b>{{.Summary}}</b> · 매일 평일 08:49 자동 수집(KST)</div>
+    <div class="summary-text">🔎 <b>{{.Summary}}</b> · 매일 평일 07:30 자동 수집(KST)</div>
   </div>
 </header>
 
@@ -619,7 +619,7 @@ footer {
 <footer>
   <div class="footer-top">
     <div class="footer-brand">THE HYUNDAI SEOUL × 29MAGAZINE STYLE</div>
-    <div>자동 수집 스케줄: 매일 평일 08:49 KST (GitHub Actions)</div>
+    <div>자동 수집 스케줄: 매일 평일 07:30 KST (GitHub Actions)</div>
   </div>
   <div>데이터 출처: 현대백화점 공식 공지(이슈 다이어리), 팝플리, 팝놀, 보도자료, 네이버 예약 전수 비교 검증</div>
   <div class="disclaimer-text">

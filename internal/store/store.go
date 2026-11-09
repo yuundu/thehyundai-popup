@@ -1,6 +1,6 @@
 // Package store 는 스냅샷 파일 입출력을 담당한다.
 //
-//	data/last_snapshot.json  : 어제 08:49 수집분 (다음 Diff 의 기준)
+//	data/last_snapshot.json  : 이전 수집분 (다음 Diff 의 기준)
 //	data/history/YYYY-MM-DD.json : 날짜별 보관본(추적/감사용)
 package store
 

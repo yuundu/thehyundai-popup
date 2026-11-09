@@ -7,7 +7,7 @@
 //	go run main.go -serve -addr :9090
 //	go run main.go -dry            # 파일 갱신 없이 수집·비교만 출력
 //
-// GitHub Actions 에서는 "go run main.go" 가 평일 KST 08:49(UTC 23:49)에 실행되고,
+// GitHub Actions 에서는 "go run main.go" 가 평일 KST 07:30(일~목 UTC 22:30)에 실행되고,
 // out/ 이 GitHub Pages 로 배포된다.
 package main
 

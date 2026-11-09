@@ -1,12 +1,12 @@
 # THE HYUNDAI SEOUL POP-UP RADAR 🛰️
 
 **매일 달라지는 더현대 서울 팝업, 층별로 한눈에.**
-평일 아침 08:49(KST)에 Go 크롤러가 팝업 정보를 전수 수집해 어제 기록과 비교(Diff)하고,
+평일 아침 07:30(KST)에 Go 크롤러가 팝업 정보를 전수 수집해 어제 기록과 비교(Diff)하고,
 변동 건만 하이라이트한 층별 레이더 사이트를 GitHub Pages 에 자동 배포합니다.
 
 - 🌐 배포: https://yuundu.github.io/thehyundai-popup/
 - 🏗️ 레포: https://github.com/yuundu/thehyundai-popup
-- ⏰ 수집 스케줄: 평일(월~금) 08:49 KST = UTC 23:49 (GitHub Actions cron)
+- ⏰ 수집 스케줄: 평일(월~금) 07:30 KST = 일~목 UTC 22:30 (GitHub Actions cron)
 
 ## 설치(최초 1회)
 
@@ -14,7 +14,7 @@
 2. `.install/deploy.yml` 을 **`.github/workflows/deploy.yml` 로 추가**.
    (Pickle 의 GitHub 연동 토큰은 워크플로 파일 push 권한이 없어, 파일 생성은
    GitHub 웹에서 한 번 직접 해야 합니다 — Actions 탭에서도 추가 가능)
-3. 이후 매일 평일 08:49 KST 에 자동 수집·배포됩니다. `Actions → Run workflow`
+3. 이후 매일 평일 07:30 KST 에 자동 수집·배포됩니다. `Actions → Run workflow`
    로 즉시 테스트 실행도 가능합니다.
 
 ## 동작 방식 (한 장 요약)
@@ -84,7 +84,7 @@ data/last_snapshot.json     어제 기준 스냅샷(Diff 기준 — CI 가 커�
 data/history/               날짜별 보관
 data/changes-*.json         일일 변동 기록(알림 로그)
 out/                        배포 산출물(index.html, popups.json, changes.json)
-.github/workflows/deploy.yml  평일 08:49 KST 수집 & Pages 배포
+.github/workflows/deploy.yml  평일 07:30 KST 수집 & Pages 배포
 ```
 
 ## 주의
