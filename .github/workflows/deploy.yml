@@ -3,7 +3,7 @@ name: 더현대 팝업 레이더 — 일일 수집 & GitHub Pages 배포
 # 평일 아침 08:49 KST = UTC 23:49
 on:
   schedule:
-    - cron: "49 23 * * 1-5"
+    - cron: "30 22 * * 0-4"
   workflow_dispatch: {} # 수동 실행(테스트용)
 
 permissions:
