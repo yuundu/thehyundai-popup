@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09 09:14 KST",
-  "as_of": "2026-11-09",
+  "generated_at": "2026-11-10 08:03 KST",
+  "as_of": "2026-11-10",
   "store": "더현대 서울",
   "popups": [
     {
@@ -25,7 +25,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 3
+      "d_day": 2
     },
     {
       "id": "빈느",
@@ -46,7 +46,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "에그릿-에그타르트",
@@ -70,7 +70,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 3
+      "d_day": 2
     },
     {
       "id": "오키-오키뷰티",
@@ -98,7 +98,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "올기",
@@ -130,7 +130,7 @@
         "ending",
         "conflict"
       ],
-      "d_day": 7
+      "d_day": 6
     },
     {
       "id": "요넥-요넥스",
@@ -151,7 +151,7 @@
         }
       ],
       "confidence": 62,
-      "d_day": 9
+      "d_day": 8
     },
     {
       "id": "주다-주다안",
@@ -179,7 +179,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "테쿠루-타코야키",
@@ -203,7 +203,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 3
+      "d_day": 2
     },
     {
       "id": "--아모레퍼시픽-팬시그널-립밤",
@@ -226,7 +226,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "롱샴-마이-플리아쥬",
@@ -251,7 +251,7 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 9
+      "d_day": 8
     },
     {
       "id": "재클-재클라",
@@ -272,7 +272,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "파우",
@@ -302,7 +302,7 @@
         "ending",
         "conflict"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -341,7 +341,24 @@
       "status": [
         "ending"
       ],
-      "d_day": 7
+      "d_day": 6
+    },
+    {
+      "id": "스텔-퓨어-골드-바",
+      "name": "스텔 퓨어 골드 바",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-10",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
     },
     {
       "id": "크리스마스-인-뉴욕시티-빌리지",
@@ -383,7 +400,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 3
+      "d_day": 2
     },
     {
       "id": "힐링스쿱-스튜디오",
@@ -406,7 +423,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 7
+      "d_day": 6
     },
     {
       "id": "루벨",
@@ -425,7 +442,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "샥즈",
@@ -444,7 +461,27 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
+    },
+    {
+      "id": "시드-시드유",
+      "name": "시드 시드유",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-16",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 6
     },
     {
       "id": "와이-와이쏘씨리얼즈",
@@ -483,7 +520,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 3
+      "d_day": 2
     },
     {
       "id": "피크퍼포먼스",
