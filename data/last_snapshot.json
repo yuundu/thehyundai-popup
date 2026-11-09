@@ -1,37 +1,8 @@
 {
-  "generated_at": "2026-11-07 12:14 KST",
-  "as_of": "2026-11-07",
+  "generated_at": "2026-11-09 09:10 KST",
+  "as_of": "2026-11-09",
   "store": "더현대 서울",
   "popups": [
-    {
-      "id": "asty-eoul-마켓-알뜰장보기",
-      "name": "Tasty Seoul 마켓 알뜰장보기",
-      "floor": "B1",
-      "category": "food",
-      "start_date": "2026-11-06",
-      "end_date": "2026-11-08",
-      "venue": "지하 1층 테이스티 서울 마켓",
-      "price": "한우 채끝 12,900원 · 사과 19,900원",
-      "summary": "주말 한정 수량 특가(한우 채끝 스틱·사과 등). 조기 소진 가능.",
-      "waiting": "주말 오전 오픈 직후 줄 가장 길어요. 오전 방문 권장.",
-      "tags": [
-        "deal"
-      ],
-      "sources": [
-        {
-          "name": "수동 검증(공식·플랫폼·언론 대조)",
-          "url": "https://thehyundaiseoul.ehyundai.com/",
-          "kind": "seed"
-        }
-      ],
-      "first_seen": "2026-11-06",
-      "confidence": 80,
-      "status": [
-        "ending",
-        "deal"
-      ],
-      "d_day": 1
-    },
     {
       "id": "강릉감자닭강정",
       "name": "강릉감자닭강정",
@@ -54,7 +25,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 3
     },
     {
       "id": "빈느",
@@ -75,7 +46,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "에그릿-에그타르트",
@@ -99,7 +70,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 3
     },
     {
       "id": "오키-오키뷰티",
@@ -127,7 +98,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "올기",
@@ -156,9 +127,10 @@
       "first_seen": "2026-10-20",
       "confidence": 80,
       "status": [
+        "ending",
         "conflict"
       ],
-      "d_day": 9
+      "d_day": 7
     },
     {
       "id": "요넥-요넥스",
@@ -179,7 +151,7 @@
         }
       ],
       "confidence": 62,
-      "d_day": 11
+      "d_day": 9
     },
     {
       "id": "주다-주다안",
@@ -207,7 +179,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "테쿠루-타코야키",
@@ -231,7 +203,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 3
     },
     {
       "id": "--아모레퍼시픽-팬시그널-립밤",
@@ -254,7 +226,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "롱샴-마이-플리아쥬",
@@ -279,7 +251,7 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 11
+      "d_day": 9
     },
     {
       "id": "재클-재클라",
@@ -300,7 +272,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "파우",
@@ -330,7 +302,7 @@
         "ending",
         "conflict"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -366,7 +338,10 @@
         }
       ],
       "confidence": 62,
-      "d_day": 9
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "크리스마스-인-뉴욕시티-빌리지",
@@ -408,7 +383,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 3
     },
     {
       "id": "힐링스쿱-스튜디오",
@@ -428,7 +403,10 @@
       ],
       "first_seen": "2026-11-04",
       "confidence": 80,
-      "d_day": 9
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "루벨",
@@ -447,7 +425,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "샥즈",
@@ -466,7 +444,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 2
     },
     {
       "id": "와이-와이쏘씨리얼즈",
@@ -505,7 +483,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 3
     },
     {
       "id": "피크퍼포먼스",
