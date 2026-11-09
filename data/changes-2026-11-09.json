@@ -1,8 +1,7 @@
 {
   "as_of": "2026-11-09",
-  "previous_of": "2026-11-07",
+  "previous_of": "2026-11-09",
   "counts": {
-    "removed": 1,
     "updated": 2
   },
   "changes": [
@@ -25,13 +24,6 @@
       "before": "지하1층 식품관 ~ 11.16",
       "after": "지하 1층 핑크스핫도그 옆",
       "message": "🔄 변경(장소): 올기 찹쌀 초콜릿 — 지하1층 식품관 ~ 11.16 → 지하 1층 핑크스핫도그 옆"
-    },
-    {
-      "type": "removed",
-      "id": "asty-eoul-마켓-알뜰장보기",
-      "name": "Tasty Seoul 마켓 알뜰장보기",
-      "floor": "B1",
-      "message": "🏁 종료: Tasty Seoul 마켓 알뜰장보기"
     }
   ],
   "notes": [
