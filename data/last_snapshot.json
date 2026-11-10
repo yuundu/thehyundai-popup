@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-10 13:14 KST",
-  "as_of": "2026-11-10",
+  "generated_at": "2026-11-11 07:26 KST",
+  "as_of": "2026-11-11",
   "store": "더현대 서울",
   "popups": [
     {
@@ -25,7 +25,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "빈느",
@@ -44,9 +44,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "에그릿-에그타르트",
@@ -70,7 +70,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "오키-오키뷰티",
@@ -96,9 +96,9 @@
       "first_seen": "2026-11-04",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "올기",
@@ -130,7 +130,7 @@
         "ending",
         "conflict"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "요넥-요넥스",
@@ -151,7 +151,10 @@
         }
       ],
       "confidence": 62,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "주다-주다안",
@@ -177,9 +180,9 @@
       "first_seen": "2026-11-04",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "테쿠루-타코야키",
@@ -203,7 +206,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "--아모레퍼시픽-팬시그널-립밤",
@@ -224,9 +227,9 @@
       "first_seen": "2026-11-05",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "롱샴-마이-플리아쥬",
@@ -251,7 +254,10 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "재클-재클라",
@@ -270,9 +276,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "파우",
@@ -299,10 +305,10 @@
       "first_seen": "2026-11-05",
       "confidence": 80,
       "status": [
-        "ending",
+        "closed",
         "conflict"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -341,7 +347,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "스텔-퓨어-골드-바",
@@ -400,7 +406,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
     },
     {
       "id": "힐링스쿱-스튜디오",
@@ -423,7 +429,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "루벨",
@@ -440,9 +446,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "샥즈",
@@ -459,9 +465,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "시드-시드유",
@@ -481,26 +487,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
-    },
-    {
-      "id": "와이-와이쏘씨리얼즈",
-      "name": "와이 와이쏘씨리얼즈",
-      "floor": "UNKNOWN",
-      "category": "fashion",
-      "start_date": "2026-12-24",
-      "end_date": "2026-12-30",
-      "tags": [
-        "upcoming"
-      ],
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62
+      "d_day": 5
     },
     {
       "id": "택플-택플로우-팝업-이구홈",
@@ -520,7 +507,46 @@
       "status": [
         "ending"
       ],
-      "d_day": 2
+      "d_day": 1
+    },
+    {
+      "id": "조르-조르조-모란디-특별전",
+      "name": "조르 조르조 모란디 특별전",
+      "floor": "6F",
+      "category": "fashion",
+      "start_date": "2026-11-21",
+      "end_date": "2027-03-01",
+      "venue": "6층 알트원",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "와이-와이쏘씨리얼즈",
+      "name": "와이 와이쏘씨리얼즈",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-12-24",
+      "end_date": "2026-12-30",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
     },
     {
       "id": "피크퍼포먼스",
