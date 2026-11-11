@@ -1,0 +1,404 @@
+{
+  "generated_at": "2026-11-12 07:26 KST",
+  "as_of": "2026-11-12",
+  "store": "더현대 서울",
+  "popups": [
+    {
+      "id": "강릉감자닭강정",
+      "name": "강릉감자닭강정",
+      "floor": "B1",
+      "category": "food",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-12",
+      "venue": "지하 1층 식품행사장",
+      "price": "15,000원",
+      "summary": "바삭 감자채 + 닭강정. 강릉 로컬 감성 간식의 백화점 입점판.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-06",
+      "confidence": 80,
+      "status": [
+        "closed"
+      ],
+      "d_day": 0
+    },
+    {
+      "id": "에그릿-에그타르트",
+      "name": "에그릿 에그타르트",
+      "floor": "B1",
+      "category": "food",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-12",
+      "venue": "지하 1층 식품행사장",
+      "price": "4,800원",
+      "summary": "강릉 중앙시장 에그타르트.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-06",
+      "confidence": 80,
+      "status": [
+        "closed"
+      ],
+      "d_day": 0
+    },
+    {
+      "id": "올기",
+      "name": "올기 찹쌀 초콜릿",
+      "floor": "B1",
+      "category": "food",
+      "start_date": "2026-10-20",
+      "end_date": "2026-11-16",
+      "venue": "지하1층 식품관 ~ 11.16",
+      "venue_alt": "지하 1층 핑크스핫도그 옆",
+      "price": "5,500~16,900원",
+      "summary": "찹쌀 초콜릿 전문 브랜드 팝업(연합뉴스 11월 쇼핑대전 보도 확인).",
+      "waiting": "현장 웨이팅은 B2 지하철 연결통로에서 09:00부터 등록.",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        },
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-10-20",
+      "confidence": 80,
+      "status": [
+        "ending",
+        "conflict"
+      ],
+      "d_day": 4
+    },
+    {
+      "id": "요넥-요넥스",
+      "name": "요넥 요넥스",
+      "floor": "B1",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 1층 아이코닉",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 6
+    },
+    {
+      "id": "테쿠루-타코야키",
+      "name": "테쿠루 타코야키",
+      "floor": "B1",
+      "category": "food",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-12",
+      "venue": "지하 1층 식품행사장",
+      "price": "9,000~10,000원",
+      "summary": "12시간 숙성 가쓰오 반죽 문어 타코야키.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-06",
+      "confidence": 80,
+      "status": [
+        "closed"
+      ],
+      "d_day": 0
+    },
+    {
+      "id": "롱샴-마이-플리아쥬",
+      "name": "롱샴 마이 플리아쥬",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-05",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 센트럴 팝업존",
+      "summary": "롱샴 향수·라이프 팝업.",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        },
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-05",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 6
+    },
+    {
+      "id": "프라다-뷰티-신제품",
+      "name": "프라다 뷰티 신제품",
+      "floor": "1F",
+      "category": "beauty",
+      "start_date": "2026-11-05",
+      "venue": "1층 본매장",
+      "summary": "신제품 출시 기념 매장 내 팝업(소진 시 종료).",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-05",
+      "confidence": 80
+    },
+    {
+      "id": "비처-비처viture-xr-글래스",
+      "name": "비처 비처(VITURE) XR 글래스",
+      "floor": "2F",
+      "category": "fashion",
+      "start_date": "2026-10-16",
+      "end_date": "2026-11-16",
+      "venue": "2층 지오코리아 매장",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 4
+    },
+    {
+      "id": "스텔-퓨어-골드-바",
+      "name": "스텔 퓨어 골드 바",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-10",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "크리스마스-인-뉴욕시티-빌리지",
+      "name": "크리스마스 인 뉴욕시티 빌리지",
+      "floor": "5F",
+      "category": "season",
+      "start_date": "2026-11-01",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트",
+      "price": "무료(사전예약제)",
+      "summary": "'Christmas in New York City' 테마. 1차 사전예약 진행 중.",
+      "waiting": "사전예약: 계정당 최대 4매 · 1시간 단위(10:30~18:30) · 예약 15분 초과 시 입장 불가. 예약 실패 시 2~4층 QR 현장 웨이팅 가능.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-01",
+      "confidence": 80
+    },
+    {
+      "id": "푸마-하이록스-서울hyrox-seoul",
+      "name": "푸마 하이록스 서울(HYROX SEOUL)",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-12",
+      "venue": "5층 에픽서울",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "closed"
+      ],
+      "d_day": 0
+    },
+    {
+      "id": "힐링스쿱-스튜디오",
+      "name": "힐링스쿱 스튜디오",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-16",
+      "venue": "5층 팝업 스튜디오",
+      "summary": "체험형 스튜디오 팝업.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-04",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 4
+    },
+    {
+      "id": "시드-시드유",
+      "name": "시드 시드유",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-16",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 4
+    },
+    {
+      "id": "입생-입생로랑-뷰티-홀리데이-쇼",
+      "name": "입생 입생로랑 뷰티 '홀리데이 쇼'",
+      "floor": "UNKNOWN",
+      "category": "beauty",
+      "start_date": "2026-10-20",
+      "end_date": "2026-11-15",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 3
+    },
+    {
+      "id": "택플-택플로우-팝업-이구홈",
+      "name": "택플 택플로우 팝업 이구홈",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-10-23",
+      "end_date": "2026-11-12",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "closed"
+      ],
+      "d_day": 0
+    },
+    {
+      "id": "조르-조르조-모란디-특별전",
+      "name": "조르 조르조 모란디 특별전",
+      "floor": "6F",
+      "category": "fashion",
+      "start_date": "2026-11-21",
+      "end_date": "2027-03-01",
+      "venue": "6층 알트원",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "와이-와이쏘씨리얼즈",
+      "name": "와이 와이쏘씨리얼즈",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-12-24",
+      "end_date": "2026-12-30",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "피크퍼포먼스",
+      "name": "피크퍼포먼스",
+      "floor": "4F",
+      "category": "fashion",
+      "start_date": "2026-11-05",
+      "end_date": "2026-12-02",
+      "venue": "4층",
+      "summary": "스포츠·아웃도어 브랜드 팝업. 출처별 종료일 안내가 달라 병기함.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-05",
+      "confidence": 80
+    }
+  ],
+  "notes": [
+    "크리스마스 빌리지: 캠페인 전체 기간은 11/1~12/31이지만 더현대 서울 입장 가능일은 11/10(화)부터 — 공식 이벤트 페이지 기준.",
+    "11/5(목) 1차 사전예약은 서버 오류로 중단 후 당일 18:00 네이버 예약으로 재진행(현대백화점 공지). 2차 예약 일정은 미공개.",
+    "피크퍼포먼스 종료일: 출처별 11/25 vs 12/2 상이 — 공식 확인 전까지 병기 표기 유지."
+  ]
+}
