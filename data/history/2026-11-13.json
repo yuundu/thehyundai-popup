@@ -1,0 +1,526 @@
+{
+  "generated_at": "2026-11-13 07:26 KST",
+  "as_of": "2026-11-13",
+  "store": "더현대 서울",
+  "popups": [
+    {
+      "id": "오니기리-고리짱",
+      "name": "오니기리 고리짱",
+      "floor": "B1",
+      "category": "food",
+      "start_date": "2026-11-13",
+      "venue": "지하 1층 푸만만 매장 앞",
+      "price": "4,300~8,900원",
+      "summary": "오사카·후쿠오카 수제 주먹밥 전문점. 연어소보로이쿠라, 치즈닭갈비 등 11/13(금) 오픈.",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "더현대 서울 공식 이슈 다이어리",
+          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/acf43a29-8a11-4d97-b17c-37ab1279d8a7",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80
+    },
+    {
+      "id": "올기",
+      "name": "올기 찹쌀 초콜릿",
+      "floor": "B1",
+      "category": "food",
+      "start_date": "2026-10-20",
+      "end_date": "2026-11-16",
+      "venue": "지하1층 식품관 ~ 11.16 곧",
+      "venue_alt": "지하 1층 핑크스핫도그 옆",
+      "price": "5,500~16,900원",
+      "summary": "찹쌀 초콜릿 전문 브랜드 팝업(연합뉴스 11월 쇼핑대전 보도 확인).",
+      "waiting": "현장 웨이팅은 B2 지하철 연결통로에서 09:00부터 등록.",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        },
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-10-20",
+      "confidence": 80,
+      "status": [
+        "ending",
+        "conflict"
+      ],
+      "d_day": 3
+    },
+    {
+      "id": "요넥-요넥스",
+      "name": "요넥스 배드민턴 팝업",
+      "floor": "B1",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 1층 아이코닉",
+      "venue_alt": "지하 1층 POP-UP ICONIC",
+      "summary": "배드민턴 대표 브랜드 요넥스 팝업스토어.",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        },
+        {
+          "name": "더현대 서울 공식 캘린더",
+          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002610512844",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "ending",
+        "conflict"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "999휴머니티",
+      "name": "999휴머니티",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 POP-UP@ICONIC",
+      "price": "인스타 5% 할인 · 리퍼브 특가",
+      "summary": "26 FW 인기 제품 단독 재입고 \u0026 리퍼브 팝업. 구스 푸퍼·플리스 등, 선착순 핸드워머/비니 증정.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 WEEKLY POP-UP",
+          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
+          "kind": "official"
+        },
+        {
+          "name": "아이즈매거진 단독 보도",
+          "url": "https://www.eyesmag.com/posts/165616/999humanity-hyundai-seoul-popup",
+          "kind": "press"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "raive-x-박현지",
+      "name": "RAIVE x 박현지",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 POP-UP@ICONIC",
+      "price": "콜라보 20% OFF · 최대 50% OFF",
+      "summary": "레이브 26 윈터 컬렉션 협업 팝업. 11/12(목) 15~17시 박현지 1DAY STAFF 이벤트.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 WEEKLY POP-UP",
+          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "롱샴-마이-플리아쥬",
+      "name": "롱샴 마이 플리아쥬",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-05",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 센트럴 팝업존",
+      "summary": "롱샴 향수·라이프 팝업.",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        },
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-05",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "비온타임",
+      "name": "비온타임",
+      "floor": "B2",
+      "category": "beauty",
+      "start_date": "2026-10-22",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 나이스웨더 매장",
+      "summary": "뷰티 브랜드 비온타임 팝업. 립틴트·플래시 글로스 선공개, 기획세트 사은품 증정.",
+      "sources": [
+        {
+          "name": "더현대 서울 입점 안내",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-10-22",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "알키알카-alki-alka",
+      "name": "알키알카 ALKI ALKA",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 POP-UP@EAST",
+      "price": "최대 45% 할인",
+      "summary": "여성 패션 첫 팝업스토어. 최대 45% 할인, 구매금액별 사은품 및 리퍼브 1~5만원 균일가.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 캘린더",
+          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514786",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "이외들-ioedle",
+      "name": "이외들 IOEDLE",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 POP-UP@WEST",
+      "summary": "1990년대 버스정류장 레트로 콘셉트 팝업.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 캘린더",
+          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514269",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "코나-코나카드-아틀리에",
+      "name": "코나 코나카드 아틀리에",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-25",
+      "venue": "지하 2층 센트럴 팝업존",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "d_day": 12
+    },
+    {
+      "id": "프로젝트웨이브",
+      "name": "프로젝트웨이브",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 ATTAG!",
+      "price": "신상 최대 15% · 베스트 최대 40%",
+      "summary": "2030 데일리 스타일 컬렉션 팝업. 카카오톡 플친 5,000원 즉시 할인, 구매금액별 사은품.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 WEEKLY POP-UP",
+          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
+      "id": "프라다-뷰티-신제품",
+      "name": "프라다 뷰티 신제품",
+      "floor": "1F",
+      "category": "beauty",
+      "start_date": "2026-11-05",
+      "venue": "1층 본매장",
+      "summary": "신제품 출시 기념 매장 내 팝업(소진 시 종료).",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-05",
+      "confidence": 80
+    },
+    {
+      "id": "비처-비처viture-xr-글래스",
+      "name": "비처 비처(VITURE) XR 글래스",
+      "floor": "2F",
+      "category": "fashion",
+      "start_date": "2026-10-16",
+      "end_date": "2026-11-16",
+      "venue": "2층 지오코리아 매장",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 3
+    },
+    {
+      "id": "스텔-퓨어-골드-바",
+      "name": "스텔 퓨어 골드 바",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-10",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "치이-치이카와-클리닉",
+      "name": "치이 치이카와 클리닉",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-27",
+      "end_date": "2027-01-10",
+      "venue": "5층 웨이브서울",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "크리스마스-인-뉴욕시티-빌리지",
+      "name": "크리스마스 인 뉴욕시티 빌리지",
+      "floor": "5F",
+      "category": "season",
+      "start_date": "2026-11-01",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트",
+      "price": "무료(사전예약제)",
+      "summary": "'Christmas in New York City' 테마. 1차 사전예약 진행 중.",
+      "waiting": "사전예약: 계정당 최대 4매 · 1시간 단위(10:30~18:30) · 예약 15분 초과 시 입장 불가. 예약 실패 시 2~4층 QR 현장 웨이팅 가능.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-01",
+      "confidence": 80
+    },
+    {
+      "id": "현대-하운드팟",
+      "name": "현대 하운드팟",
+      "floor": "5F",
+      "category": "fashion",
+      "end_date": "2026-12-27",
+      "venue": "5층 사운즈포레스트 ~ 12.27  예약",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "힐링스쿱-스튜디오",
+      "name": "힐링스쿱 스튜디오",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-16",
+      "venue": "5층 팝업 스튜디오",
+      "summary": "체험형 스튜디오 팝업.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-04",
+      "confidence": 80,
+      "status": [
+        "ending"
+      ],
+      "d_day": 3
+    },
+    {
+      "id": "시드-시드유",
+      "name": "시드 시드유",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-16",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 3
+    },
+    {
+      "id": "입생-입생로랑-뷰티-홀리데이-쇼",
+      "name": "입생 입생로랑 뷰티 '홀리데이 쇼'",
+      "floor": "UNKNOWN",
+      "category": "beauty",
+      "start_date": "2026-10-20",
+      "end_date": "2026-11-15",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 2
+    },
+    {
+      "id": "조르-조르조-모란디-특별전",
+      "name": "조르 조르조 모란디 특별전",
+      "floor": "6F",
+      "category": "fashion",
+      "start_date": "2026-11-21",
+      "end_date": "2027-03-01",
+      "venue": "6층 알트원",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "와이-와이쏘씨리얼즈",
+      "name": "와이 와이쏘씨리얼즈",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-12-24",
+      "end_date": "2026-12-30",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "피크퍼포먼스",
+      "name": "피크퍼포먼스",
+      "floor": "4F",
+      "category": "fashion",
+      "start_date": "2026-11-05",
+      "end_date": "2026-12-02",
+      "venue": "4층",
+      "summary": "스포츠·아웃도어 브랜드 팝업. 출처별 종료일 안내가 달라 병기함.",
+      "sources": [
+        {
+          "name": "수동 검증(공식·플랫폼·언론 대조)",
+          "url": "https://thehyundaiseoul.ehyundai.com/",
+          "kind": "seed"
+        }
+      ],
+      "first_seen": "2026-11-05",
+      "confidence": 80
+    }
+  ],
+  "notes": [
+    "크리스마스 빌리지: 캠페인 전체 기간은 11/1~12/31이지만 더현대 서울 입장 가능일은 11/10(화)부터 — 공식 이벤트 페이지 기준.",
+    "11/5(목) 1차 사전예약은 서버 오류로 중단 후 당일 18:00 네이버 예약으로 재진행(현대백화점 공지). 2차 예약 일정은 미공개.",
+    "피크퍼포먼스 종료일: 출처별 11/25 vs 12/2 상이 — 공식 확인 전까지 병기 표기 유지."
+  ]
+}

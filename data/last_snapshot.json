@@ -1,56 +1,8 @@
 {
-  "generated_at": "2026-11-12 12:14 KST",
-  "as_of": "2026-11-12",
+  "generated_at": "2026-11-13 07:26 KST",
+  "as_of": "2026-11-13",
   "store": "더현대 서울",
   "popups": [
-    {
-      "id": "강릉감자닭강정",
-      "name": "강릉감자닭강정",
-      "floor": "B1",
-      "category": "food",
-      "start_date": "2026-11-06",
-      "end_date": "2026-11-12",
-      "venue": "지하 1층 식품행사장",
-      "price": "15,000원",
-      "summary": "바삭 감자채 + 닭강정. 강릉 로컬 감성 간식의 백화점 입점판.",
-      "sources": [
-        {
-          "name": "수동 검증(공식·플랫폼·언론 대조)",
-          "url": "https://thehyundaiseoul.ehyundai.com/",
-          "kind": "seed"
-        }
-      ],
-      "first_seen": "2026-11-06",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "에그릿-에그타르트",
-      "name": "에그릿 에그타르트",
-      "floor": "B1",
-      "category": "food",
-      "start_date": "2026-11-06",
-      "end_date": "2026-11-12",
-      "venue": "지하 1층 식품행사장",
-      "price": "4,800원",
-      "summary": "강릉 중앙시장 에그타르트.",
-      "sources": [
-        {
-          "name": "수동 검증(공식·플랫폼·언론 대조)",
-          "url": "https://thehyundaiseoul.ehyundai.com/",
-          "kind": "seed"
-        }
-      ],
-      "first_seen": "2026-11-06",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
     {
       "id": "오니기리-고리짱",
       "name": "오니기리 고리짱",
@@ -71,10 +23,7 @@
         }
       ],
       "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "new"
-      ]
+      "confidence": 80
     },
     {
       "id": "올기",
@@ -83,7 +32,7 @@
       "category": "food",
       "start_date": "2026-10-20",
       "end_date": "2026-11-16",
-      "venue": "지하1층 식품관 ~ 11.16",
+      "venue": "지하1층 식품관 ~ 11.16 곧",
       "venue_alt": "지하 1층 핑크스핫도그 옆",
       "price": "5,500~16,900원",
       "summary": "찹쌀 초콜릿 전문 브랜드 팝업(연합뉴스 11월 쇼핑대전 보도 확인).",
@@ -106,7 +55,7 @@
         "ending",
         "conflict"
       ],
-      "d_day": 4
+      "d_day": 3
     },
     {
       "id": "요넥-요넥스",
@@ -133,35 +82,10 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "new",
         "ending",
         "conflict"
       ],
-      "d_day": 6
-    },
-    {
-      "id": "테쿠루-타코야키",
-      "name": "테쿠루 타코야키",
-      "floor": "B1",
-      "category": "food",
-      "start_date": "2026-11-06",
-      "end_date": "2026-11-12",
-      "venue": "지하 1층 식품행사장",
-      "price": "9,000~10,000원",
-      "summary": "12시간 숙성 가쓰오 반죽 문어 타코야키.",
-      "sources": [
-        {
-          "name": "수동 검증(공식·플랫폼·언론 대조)",
-          "url": "https://thehyundaiseoul.ehyundai.com/",
-          "kind": "seed"
-        }
-      ],
-      "first_seen": "2026-11-06",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
+      "d_day": 5
     },
     {
       "id": "999휴머니티",
@@ -188,10 +112,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "new",
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "raive-x-박현지",
@@ -213,10 +136,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "new",
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "롱샴-마이-플리아쥬",
@@ -244,7 +166,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "비온타임",
@@ -267,7 +189,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "알키알카-alki-alka",
@@ -289,10 +211,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "new",
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "이외들-ioedle",
@@ -313,10 +234,30 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "new",
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
+    },
+    {
+      "id": "코나-코나카드-아틀리에",
+      "name": "코나 코나카드 아틀리에",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-25",
+      "venue": "지하 2층 센트럴 팝업존",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "d_day": 12
     },
     {
       "id": "프로젝트웨이브",
@@ -338,10 +279,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "new",
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -380,7 +320,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 3
     },
     {
       "id": "스텔-퓨어-골드-바",
@@ -390,6 +330,26 @@
       "start_date": "2026-11-10",
       "end_date": "2026-12-31",
       "venue": "5층 사운즈 포레스트",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "치이-치이카와-클리닉",
+      "name": "치이 치이카와 클리닉",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-11-27",
+      "end_date": "2027-01-10",
+      "venue": "5층 웨이브서울",
+      "tags": [
+        "upcoming"
+      ],
       "sources": [
         {
           "name": "팝업나우",
@@ -421,13 +381,12 @@
       "confidence": 80
     },
     {
-      "id": "푸마-하이록스-서울hyrox-seoul",
-      "name": "푸마 하이록스 서울(HYROX SEOUL)",
+      "id": "현대-하운드팟",
+      "name": "현대 하운드팟",
       "floor": "5F",
       "category": "fashion",
-      "start_date": "2026-11-06",
-      "end_date": "2026-11-12",
-      "venue": "5층 에픽서울",
+      "end_date": "2026-12-27",
+      "venue": "5층 사운즈포레스트 ~ 12.27  예약",
       "sources": [
         {
           "name": "팝업나우",
@@ -435,11 +394,7 @@
           "kind": "platform"
         }
       ],
-      "confidence": 62,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
+      "confidence": 62
     },
     {
       "id": "힐링스쿱-스튜디오",
@@ -462,7 +417,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 3
     },
     {
       "id": "시드-시드유",
@@ -482,7 +437,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 3
     },
     {
       "id": "입생-입생로랑-뷰티-홀리데이-쇼",
@@ -502,27 +457,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 3
-    },
-    {
-      "id": "택플-택플로우-팝업-이구홈",
-      "name": "택플 택플로우 팝업 이구홈",
-      "floor": "UNKNOWN",
-      "category": "fashion",
-      "start_date": "2026-10-23",
-      "end_date": "2026-11-12",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
+      "d_day": 2
     },
     {
       "id": "조르-조르조-모란디-특별전",
