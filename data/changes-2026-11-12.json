@@ -1,19 +1,10 @@
 {
   "as_of": "2026-11-12",
-  "previous_of": "2026-11-11",
+  "previous_of": "2026-11-12",
   "counts": {
-    "added": 3,
-    "removed": 8,
     "updated": 1
   },
   "changes": [
-    {
-      "type": "added",
-      "id": "입생-입생로랑-뷰티-홀리데이-쇼",
-      "name": "입생 입생로랑 뷰티 '홀리데이 쇼'",
-      "floor": "층 미확인",
-      "message": "🆕 신규 오픈: 입생 입생로랑 뷰티 '홀리데이 쇼' (10-20~11-15)"
-    },
     {
       "type": "updated",
       "id": "올기",
@@ -23,76 +14,6 @@
       "before": "지하1층 식품관 ~ 11.16",
       "after": "지하 1층 핑크스핫도그 옆",
       "message": "🔄 변경(장소): 올기 찹쌀 초콜릿 — 지하1층 식품관 ~ 11.16 → 지하 1층 핑크스핫도그 옆"
-    },
-    {
-      "type": "added",
-      "id": "알키알카-alki-alka",
-      "name": "알키알카 ALKI ALKA",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 알키알카 ALKI ALKA (11-12~11-18) · 지하 2층 POP-UP@EAST · 최대 45% 할인"
-    },
-    {
-      "type": "added",
-      "id": "이외들-ioedle",
-      "name": "이외들 IOEDLE",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 이외들 IOEDLE (11-12~11-18) · 지하 2층 POP-UP@WEST"
-    },
-    {
-      "type": "removed",
-      "id": "루벨",
-      "name": "루벨",
-      "floor": "층 미확인",
-      "message": "🏁 종료: 루벨"
-    },
-    {
-      "type": "removed",
-      "id": "빈느",
-      "name": "빈느",
-      "floor": "B1",
-      "message": "🏁 종료: 빈느"
-    },
-    {
-      "type": "removed",
-      "id": "샥즈",
-      "name": "샥즈",
-      "floor": "층 미확인",
-      "message": "🏁 종료: 샥즈"
-    },
-    {
-      "type": "removed",
-      "id": "파우",
-      "name": "파우 비클린",
-      "floor": "B2",
-      "message": "🏁 종료: 파우 비클린"
-    },
-    {
-      "type": "removed",
-      "id": "주다-주다안",
-      "name": "주다 주다안",
-      "floor": "B1",
-      "message": "🏁 종료: 주다 주다안"
-    },
-    {
-      "type": "removed",
-      "id": "--아모레퍼시픽-팬시그널-립밤",
-      "name": "SM X 아모레퍼시픽 팬시그널 립밤",
-      "floor": "B2",
-      "message": "🏁 종료: SM X 아모레퍼시픽 팬시그널 립밤"
-    },
-    {
-      "type": "removed",
-      "id": "재클-재클라",
-      "name": "재클 재클라",
-      "floor": "B2",
-      "message": "🏁 종료: 재클 재클라"
-    },
-    {
-      "type": "removed",
-      "id": "오키-오키뷰티",
-      "name": "오키 오키뷰티",
-      "floor": "B1",
-      "message": "🏁 종료: 오키 오키뷰티"
     }
   ],
   "notes": [
