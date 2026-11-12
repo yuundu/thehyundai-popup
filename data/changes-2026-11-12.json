@@ -7,16 +7,6 @@
   "changes": [
     {
       "type": "updated",
-      "id": "요넥-요넥스",
-      "name": "요넥스 배드민턴 팝업",
-      "floor": "B1",
-      "field": "장소",
-      "before": "지하 1층 아이코닉",
-      "after": "지하 1층 POP-UP ICONIC",
-      "message": "🔄 변경(장소): 요넥스 배드민턴 팝업 — 지하 1층 아이코닉 → 지하 1층 POP-UP ICONIC"
-    },
-    {
-      "type": "updated",
       "id": "올기",
       "name": "올기 찹쌀 초콜릿",
       "floor": "B1",
@@ -24,6 +14,16 @@
       "before": "지하1층 식품관 ~ 11.16",
       "after": "지하 1층 핑크스핫도그 옆",
       "message": "🔄 변경(장소): 올기 찹쌀 초콜릿 — 지하1층 식품관 ~ 11.16 → 지하 1층 핑크스핫도그 옆"
+    },
+    {
+      "type": "updated",
+      "id": "요넥-요넥스",
+      "name": "요넥스 배드민턴 팝업",
+      "floor": "B1",
+      "field": "장소",
+      "before": "지하 1층 아이코닉",
+      "after": "지하 1층 POP-UP ICONIC",
+      "message": "🔄 변경(장소): 요넥스 배드민턴 팝업 — 지하 1층 아이코닉 → 지하 1층 POP-UP ICONIC"
     }
   ],
   "notes": [
