@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 12:03 KST",
+  "generated_at": "2026-11-12 12:05 KST",
   "as_of": "2026-11-12",
   "store": "더현대 서울",
   "popups": [
@@ -110,35 +110,20 @@
     },
     {
       "id": "요넥-요넥스",
-      "name": "요넥 요넥스",
-      "floor": "B1",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 1층 아이코닉",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62,
-      "status": [
-        "ending"
-      ],
-      "d_day": 6
-    },
-    {
-      "id": "요넥스-배드민턴-팝업",
       "name": "요넥스 배드민턴 팝업",
       "floor": "B1",
       "category": "fashion",
       "start_date": "2026-11-12",
       "end_date": "2026-11-18",
-      "venue": "지하 1층 POP-UP ICONIC",
+      "venue": "지하 1층 아이코닉",
+      "venue_alt": "지하 1층 POP-UP ICONIC",
       "summary": "배드민턴 대표 브랜드 요넥스 팝업스토어.",
       "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        },
         {
           "name": "더현대 서울 공식 캘린더",
           "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002610512844",
@@ -149,7 +134,8 @@
       "confidence": 80,
       "status": [
         "new",
-        "ending"
+        "ending",
+        "conflict"
       ],
       "d_day": 6
     },

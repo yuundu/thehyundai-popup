@@ -85,7 +85,7 @@ func Popups() []model.Popup {
 			p := base("요넥스 배드민턴 팝업", model.FloorB1, model.CategoryFashion,
 				"2026-11-12", "2026-11-18", "지하 1층 POP-UP ICONIC", "",
 				"배드민턴 대표 브랜드 요넥스 팝업스토어.")
-			p.ID = "요넥스-배드민턴-팝업"
+			p.ID = "요넥-요넥스"
 			p.StartDateAlt = "2026-11-04(공식 캘린더) / 2026-11-12(플랫폼)"
 			p.FirstSeen = "2026-11-12"
 			p.Sources = []model.Source{

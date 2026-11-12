@@ -108,12 +108,15 @@ type agg struct {
 	kinds map[model.SourceKind]bool
 }
 
-// findFuzzy 는 키가 서로를 포함하는 관계(예: "올기" ⊂ "올기찹쌀초콜릿")인
-// 기존 그룹을 찾는다. 브랜드명 표기 차이로 같은 팝업이 갈라지는 것을 막는다.
-func findFuzzy(groups map[string]*agg, k string) string {
-	for gk := range groups {
+// findFuzzy 는 키가 서로를 포함하는 관계(예: "올기" ⊂ "올기찹쌀초콜릿")나
+// 같은 ID 를 가진 기존 그룹을 찾는다. 브랜드명 표기 차이로 같은 팝업이 갈라지는 것을 막는다.
+func findFuzzy(groups map[string]*agg, k string, id string) string {
+	for gk, g := range groups {
 		if gk == k {
 			continue
+		}
+		if id != "" && g.p.ID == id {
+			return gk
 		}
 		if strings.Contains(gk, k) || strings.Contains(k, gk) {
 			return gk
@@ -138,7 +141,7 @@ func Merge(items []Tagged) []model.Popup {
 			continue
 		}
 		k := Key(name)
-		if fk := findFuzzy(groups, k); fk != "" {
+		if fk := findFuzzy(groups, k, in.ID); fk != "" {
 			k = fk
 		}
 		g, ok := groups[k]
