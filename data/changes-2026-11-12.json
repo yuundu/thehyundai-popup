@@ -2,7 +2,7 @@
   "as_of": "2026-11-12",
   "previous_of": "2026-11-11",
   "counts": {
-    "added": 1,
+    "added": 3,
     "removed": 8,
     "updated": 1
   },
@@ -25,11 +25,53 @@
       "message": "🔄 변경(장소): 올기 찹쌀 초콜릿 — 지하1층 식품관 ~ 11.16 → 지하 1층 핑크스핫도그 옆"
     },
     {
+      "type": "added",
+      "id": "알키알카-alki-alka",
+      "name": "알키알카 ALKI ALKA",
+      "floor": "B2",
+      "message": "🆕 신규 오픈: 알키알카 ALKI ALKA (11-12~11-18) · 지하 2층 POP-UP@EAST · 최대 45% 할인"
+    },
+    {
+      "type": "added",
+      "id": "이외들-ioedle",
+      "name": "이외들 IOEDLE",
+      "floor": "B2",
+      "message": "🆕 신규 오픈: 이외들 IOEDLE (11-12~11-18) · 지하 2층 POP-UP@WEST"
+    },
+    {
       "type": "removed",
-      "id": "오키-오키뷰티",
-      "name": "오키 오키뷰티",
+      "id": "루벨",
+      "name": "루벨",
+      "floor": "층 미확인",
+      "message": "🏁 종료: 루벨"
+    },
+    {
+      "type": "removed",
+      "id": "빈느",
+      "name": "빈느",
       "floor": "B1",
-      "message": "🏁 종료: 오키 오키뷰티"
+      "message": "🏁 종료: 빈느"
+    },
+    {
+      "type": "removed",
+      "id": "샥즈",
+      "name": "샥즈",
+      "floor": "층 미확인",
+      "message": "🏁 종료: 샥즈"
+    },
+    {
+      "type": "removed",
+      "id": "파우",
+      "name": "파우 비클린",
+      "floor": "B2",
+      "message": "🏁 종료: 파우 비클린"
+    },
+    {
+      "type": "removed",
+      "id": "주다-주다안",
+      "name": "주다 주다안",
+      "floor": "B1",
+      "message": "🏁 종료: 주다 주다안"
     },
     {
       "type": "removed",
@@ -47,38 +89,10 @@
     },
     {
       "type": "removed",
-      "id": "루벨",
-      "name": "루벨",
-      "floor": "층 미확인",
-      "message": "🏁 종료: 루벨"
-    },
-    {
-      "type": "removed",
-      "id": "샥즈",
-      "name": "샥즈",
-      "floor": "층 미확인",
-      "message": "🏁 종료: 샥즈"
-    },
-    {
-      "type": "removed",
-      "id": "빈느",
-      "name": "빈느",
+      "id": "오키-오키뷰티",
+      "name": "오키 오키뷰티",
       "floor": "B1",
-      "message": "🏁 종료: 빈느"
-    },
-    {
-      "type": "removed",
-      "id": "파우",
-      "name": "파우 비클린",
-      "floor": "B2",
-      "message": "🏁 종료: 파우 비클린"
-    },
-    {
-      "type": "removed",
-      "id": "주다-주다안",
-      "name": "주다 주다안",
-      "floor": "B1",
-      "message": "🏁 종료: 주다 주다안"
+      "message": "🏁 종료: 오키 오키뷰티"
     }
   ],
   "notes": [

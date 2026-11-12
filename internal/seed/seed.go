@@ -9,7 +9,11 @@
 //   - 연도 필터: 모든 기간은 2026년으로 검증된 것만 둔다(2025년 이월 정보 배제).
 package seed
 
-import "github.com/yuundu/thehyundai-popup/internal/model"
+import (
+	"strings"
+
+	"github.com/yuundu/thehyundai-popup/internal/model"
+)
 
 // seedSrc 는 수동 검증 출처의 공통 표기.
 var seedSrc = model.Source{
@@ -85,6 +89,36 @@ func Popups() []model.Popup {
 			"2026-11-05", "2026-11-11", "지하 2층 비클린 매장", "", "파우 팝업스토어."),
 		base("롱샴 마이 플리아쥬", model.FloorB2, model.CategoryFashion,
 			"2026-11-05", "2026-11-18", "지하 2층 센트럴 팝업존", "", "롱샴 향수·라이프 팝업."),
+		func() model.Popup {
+			p := base("이외들 IOEDLE", model.FloorB2, model.CategoryFashion,
+				"2026-11-12", "2026-11-18", "지하 2층 POP-UP@WEST", "",
+				"1990년대 버스정류장 레트로 콘셉트 팝업.")
+			p.ID = "이외들-ioedle"
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 캘린더",
+					URL:  "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514269",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
+		func() model.Popup {
+			p := base("알키알카 ALKI ALKA", model.FloorB2, model.CategoryFashion,
+				"2026-11-12", "2026-11-18", "지하 2층 POP-UP@EAST", "최대 45% 할인",
+				"여성 패션 첫 팝업스토어. 최대 45% 할인, 구매금액별 사은품 및 리퍼브 1~5만원 균일가.")
+			p.ID = "알키알카-alki-alka"
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 캘린더",
+					URL:  "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514786",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
 
 		// ── 1F ────────────────────────────────────────────────────────
 		func() model.Popup {
@@ -135,12 +169,13 @@ func Popups() []model.Popup {
 
 // slugSeed 는 사이트 패키지를 끌어오지 않고 ID 를 만들기 위한 최소 정규화.
 func slugSeed(name string) string {
+	name = strings.ToLower(name)
 	var b []rune
 	for _, r := range name {
 		switch {
 		case r >= 'a' && r <= 'z', r >= '0' && r <= '9', r >= 0xAC00 && r <= 0xD7A3:
 			b = append(b, r)
-		case r == ' ':
+		case r == ' ', r == '-':
 			b = append(b, '-')
 		}
 	}

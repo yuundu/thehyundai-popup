@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 07:26 KST",
+  "generated_at": "2026-11-12 11:54 KST",
   "as_of": "2026-11-12",
   "store": "더현대 서울",
   "popups": [
@@ -152,6 +152,55 @@
       "first_seen": "2026-11-05",
       "confidence": 80,
       "status": [
+        "ending"
+      ],
+      "d_day": 6
+    },
+    {
+      "id": "알키알카-alki-alka",
+      "name": "알키알카 ALKI ALKA",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 POP-UP@EAST",
+      "price": "최대 45% 할인",
+      "summary": "여성 패션 첫 팝업스토어. 최대 45% 할인, 구매금액별 사은품 및 리퍼브 1~5만원 균일가.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 캘린더",
+          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514786",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "new",
+        "ending"
+      ],
+      "d_day": 6
+    },
+    {
+      "id": "이외들-ioedle",
+      "name": "이외들 IOEDLE",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "venue": "지하 2층 POP-UP@WEST",
+      "summary": "1990년대 버스정류장 레트로 콘셉트 팝업.",
+      "sources": [
+        {
+          "name": "더현대 서울 공식 캘린더",
+          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514269",
+          "kind": "official"
+        }
+      ],
+      "first_seen": "2026-11-12",
+      "confidence": 80,
+      "status": [
+        "new",
         "ending"
       ],
       "d_day": 6
