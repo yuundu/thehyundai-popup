@@ -81,6 +81,38 @@ func Popups() []model.Popup {
 			"2026-11-04", "2026-11-11", "지하 1층 팝업 존", "", "스킨케어 브랜드 팝업."),
 		base("주다안", model.FloorB1, model.CategoryFashion,
 			"2026-11-04", "2026-11-11", "지하 1층 대행사장", "", "주다안 팝업."),
+		func() model.Popup {
+			p := base("요넥스 배드민턴 팝업", model.FloorB1, model.CategoryFashion,
+				"2026-11-12", "2026-11-18", "지하 1층 POP-UP ICONIC", "",
+				"배드민턴 대표 브랜드 요넥스 팝업스토어.")
+			p.ID = "요넥스-배드민턴-팝업"
+			p.StartDateAlt = "2026-11-04(공식 캘린더) / 2026-11-12(플랫폼)"
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 캘린더",
+					URL:  "https://thehyundaiseoul.ehyundai.com/event-info/E4002610512844",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
+		func() model.Popup {
+			p := base("오니기리 고리짱", model.FloorB1, model.CategoryFood,
+				"2026-11-13", "", "지하 1층 푸만만 매장 앞", "4,300~8,900원",
+				"오사카·후쿠오카 수제 주먹밥 전문점. 연어소보로이쿠라, 치즈닭갈비 등 11/13(금) 오픈.")
+			p.ID = "오니기리-고리짱"
+			p.Tags = append(p.Tags, "upcoming")
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 이슈 다이어리",
+					URL:  "https://thehyundaiseoul.ehyundai.com/issue-diary/acf43a29-8a11-4d97-b17c-37ab1279d8a7",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
 
 		// ── B2 ────────────────────────────────────────────────────────
 		base("SM X 아모레퍼시픽 팬시그널 립밤", model.FloorB2, model.CategoryBeauty,
@@ -114,6 +146,71 @@ func Popups() []model.Popup {
 				{
 					Name: "더현대 서울 공식 캘린더",
 					URL:  "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514786",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
+		func() model.Popup {
+			p := base("RAIVE x 박현지", model.FloorB2, model.CategoryFashion,
+				"2026-11-12", "2026-11-18", "지하 2층 POP-UP@ICONIC", "콜라보 20% OFF · 최대 50% OFF",
+				"레이브 26 윈터 컬렉션 협업 팝업. 11/12(목) 15~17시 박현지 1DAY STAFF 이벤트.")
+			p.ID = "raive-x-박현지"
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 WEEKLY POP-UP",
+					URL:  "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
+		func() model.Popup {
+			p := base("999휴머니티", model.FloorB2, model.CategoryFashion,
+				"2026-11-12", "2026-11-18", "지하 2층 POP-UP@ICONIC", "인스타 5% 할인 · 리퍼브 특가",
+				"26 FW 인기 제품 단독 재입고 & 리퍼브 팝업. 구스 푸퍼·플리스 등, 선착순 핸드워머/비니 증정.")
+			p.ID = "999휴머니티"
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 WEEKLY POP-UP",
+					URL:  "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
+					Kind: model.KindOfficial,
+				},
+				{
+					Name: "아이즈매거진 단독 보도",
+					URL:  "https://www.eyesmag.com/posts/165616/999humanity-hyundai-seoul-popup",
+					Kind: model.KindPress,
+				},
+			}
+			return p
+		}(),
+		func() model.Popup {
+			p := base("프로젝트웨이브", model.FloorB2, model.CategoryFashion,
+				"2026-11-12", "2026-11-18", "지하 2층 ATTAG!", "신상 최대 15% · 베스트 최대 40%",
+				"2030 데일리 스타일 컬렉션 팝업. 카카오톡 플친 5,000원 즉시 할인, 구매금액별 사은품.")
+			p.ID = "프로젝트웨이브"
+			p.FirstSeen = "2026-11-12"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 공식 WEEKLY POP-UP",
+					URL:  "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
+					Kind: model.KindOfficial,
+				},
+			}
+			return p
+		}(),
+		func() model.Popup {
+			p := base("비온타임", model.FloorB2, model.CategoryBeauty,
+				"2026-10-22", "2026-11-18", "지하 2층 나이스웨더 매장", "",
+				"뷰티 브랜드 비온타임 팝업. 립틴트·플래시 글로스 선공개, 기획세트 사은품 증정.")
+			p.ID = "비온타임"
+			p.FirstSeen = "2026-10-22"
+			p.Sources = []model.Source{
+				{
+					Name: "더현대 서울 입점 안내",
+					URL:  "https://thehyundaiseoul.ehyundai.com/",
 					Kind: model.KindOfficial,
 				},
 			}
