@@ -1,54 +1,10 @@
 {
   "as_of": "2026-11-12",
-  "previous_of": "2026-11-11",
+  "previous_of": "2026-11-12",
   "counts": {
-    "added": 8,
-    "removed": 8,
     "updated": 2
   },
   "changes": [
-    {
-      "type": "added",
-      "id": "999휴머니티",
-      "name": "999휴머니티",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 999휴머니티 (11-12~11-18) · 지하 2층 POP-UP@ICONIC · 인스타 5% 할인 · 리퍼브 특가"
-    },
-    {
-      "type": "added",
-      "id": "raive-x-박현지",
-      "name": "RAIVE x 박현지",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: RAIVE x 박현지 (11-12~11-18) · 지하 2층 POP-UP@ICONIC · 콜라보 20% OFF · 최대 50% OFF"
-    },
-    {
-      "type": "added",
-      "id": "비온타임",
-      "name": "비온타임",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 비온타임 (10-22~11-18) · 지하 2층 나이스웨더 매장"
-    },
-    {
-      "type": "added",
-      "id": "프로젝트웨이브",
-      "name": "프로젝트웨이브",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 프로젝트웨이브 (11-12~11-18) · 지하 2층 ATTAG! · 신상 최대 15% · 베스트 최대 40%"
-    },
-    {
-      "type": "added",
-      "id": "이외들-ioedle",
-      "name": "이외들 IOEDLE",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 이외들 IOEDLE (11-12~11-18) · 지하 2층 POP-UP@WEST"
-    },
-    {
-      "type": "added",
-      "id": "오니기리-고리짱",
-      "name": "오니기리 고리짱",
-      "floor": "B1",
-      "message": "🆕 신규 오픈: 오니기리 고리짱 · 지하 1층 푸만만 매장 앞 · 4,300~8,900원"
-    },
     {
       "type": "updated",
       "id": "요넥-요넥스",
@@ -60,20 +16,6 @@
       "message": "🔄 변경(장소): 요넥스 배드민턴 팝업 — 지하 1층 아이코닉 → 지하 1층 POP-UP ICONIC"
     },
     {
-      "type": "added",
-      "id": "알키알카-alki-alka",
-      "name": "알키알카 ALKI ALKA",
-      "floor": "B2",
-      "message": "🆕 신규 오픈: 알키알카 ALKI ALKA (11-12~11-18) · 지하 2층 POP-UP@EAST · 최대 45% 할인"
-    },
-    {
-      "type": "added",
-      "id": "입생-입생로랑-뷰티-홀리데이-쇼",
-      "name": "입생 입생로랑 뷰티 '홀리데이 쇼'",
-      "floor": "층 미확인",
-      "message": "🆕 신규 오픈: 입생 입생로랑 뷰티 '홀리데이 쇼' (10-20~11-15)"
-    },
-    {
       "type": "updated",
       "id": "올기",
       "name": "올기 찹쌀 초콜릿",
@@ -82,62 +24,6 @@
       "before": "지하1층 식품관 ~ 11.16",
       "after": "지하 1층 핑크스핫도그 옆",
       "message": "🔄 변경(장소): 올기 찹쌀 초콜릿 — 지하1층 식품관 ~ 11.16 → 지하 1층 핑크스핫도그 옆"
-    },
-    {
-      "type": "removed",
-      "id": "재클-재클라",
-      "name": "재클 재클라",
-      "floor": "B2",
-      "message": "🏁 종료: 재클 재클라"
-    },
-    {
-      "type": "removed",
-      "id": "파우",
-      "name": "파우 비클린",
-      "floor": "B2",
-      "message": "🏁 종료: 파우 비클린"
-    },
-    {
-      "type": "removed",
-      "id": "오키-오키뷰티",
-      "name": "오키 오키뷰티",
-      "floor": "B1",
-      "message": "🏁 종료: 오키 오키뷰티"
-    },
-    {
-      "type": "removed",
-      "id": "--아모레퍼시픽-팬시그널-립밤",
-      "name": "SM X 아모레퍼시픽 팬시그널 립밤",
-      "floor": "B2",
-      "message": "🏁 종료: SM X 아모레퍼시픽 팬시그널 립밤"
-    },
-    {
-      "type": "removed",
-      "id": "루벨",
-      "name": "루벨",
-      "floor": "층 미확인",
-      "message": "🏁 종료: 루벨"
-    },
-    {
-      "type": "removed",
-      "id": "샥즈",
-      "name": "샥즈",
-      "floor": "층 미확인",
-      "message": "🏁 종료: 샥즈"
-    },
-    {
-      "type": "removed",
-      "id": "빈느",
-      "name": "빈느",
-      "floor": "B1",
-      "message": "🏁 종료: 빈느"
-    },
-    {
-      "type": "removed",
-      "id": "주다-주다안",
-      "name": "주다 주다안",
-      "floor": "B1",
-      "message": "🏁 종료: 주다 주다안"
     }
   ],
   "notes": [
