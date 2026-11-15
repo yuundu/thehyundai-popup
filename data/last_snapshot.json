@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13 11:46 KST",
-  "as_of": "2026-11-13",
+  "generated_at": "2026-11-16 07:26 KST",
+  "as_of": "2026-11-16",
   "store": "더현대 서울",
   "popups": [
     {
@@ -32,7 +32,7 @@
       "category": "food",
       "start_date": "2026-10-20",
       "end_date": "2026-11-16",
-      "venue": "지하1층 식품관 ~ 11.16 곧",
+      "venue": "지하1층 식품관 ~ 11.16 곧  오늘",
       "venue_alt": "지하 1층 핑크스핫도그 옆",
       "price": "5,500~16,900원",
       "summary": "찹쌀 초콜릿 전문 브랜드 팝업(연합뉴스 11월 쇼핑대전 보도 확인).",
@@ -52,10 +52,10 @@
       "first_seen": "2026-10-20",
       "confidence": 80,
       "status": [
-        "ending",
+        "closed",
         "conflict"
       ],
-      "d_day": 3
+      "d_day": 0
     },
     {
       "id": "요넥-요넥스",
@@ -85,7 +85,7 @@
         "ending",
         "conflict"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "999휴머니티",
@@ -114,7 +114,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "raive-x-박현지",
@@ -138,7 +138,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "롱샴-마이-플리아쥬",
@@ -166,7 +166,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "비온타임",
@@ -189,7 +189,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "알키알카-alki-alka",
@@ -213,7 +213,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "이외들-ioedle",
@@ -236,7 +236,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "코나-코나카드-아틀리에",
@@ -257,7 +257,7 @@
         }
       ],
       "confidence": 62,
-      "d_day": 12
+      "d_day": 9
     },
     {
       "id": "프로젝트웨이브",
@@ -281,7 +281,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -318,9 +318,25 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 3
+      "d_day": 0
+    },
+    {
+      "id": "베즐-베즐리-크리스마스",
+      "name": "베즐 베즐리 크리스마스",
+      "floor": "5F",
+      "category": "season",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트 ~ 12.31",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
     },
     {
       "id": "스텔-퓨어-골드-바",
@@ -415,9 +431,9 @@
       "first_seen": "2026-11-04",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 3
+      "d_day": 0
     },
     {
       "id": "시드-시드유",
@@ -435,29 +451,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 3
-    },
-    {
-      "id": "입생-입생로랑-뷰티-홀리데이-쇼",
-      "name": "입생 입생로랑 뷰티 '홀리데이 쇼'",
-      "floor": "UNKNOWN",
-      "category": "beauty",
-      "start_date": "2026-10-20",
-      "end_date": "2026-11-15",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62,
-      "status": [
-        "ending"
-      ],
-      "d_day": 2
+      "d_day": 0
     },
     {
       "id": "조르-조르조-모란디-특별전",
