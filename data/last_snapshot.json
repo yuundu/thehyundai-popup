@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17 13:41 KST",
-  "as_of": "2026-11-17",
+  "generated_at": "2026-11-18 07:25 KST",
+  "as_of": "2026-11-18",
   "store": "더현대 서울",
   "popups": [
     {
@@ -50,10 +50,10 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "ending",
+        "closed",
         "conflict"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "999휴머니티",
@@ -80,9 +80,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "raive-x-박현지",
@@ -104,9 +104,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "롱샴-마이-플리아쥬",
@@ -132,9 +132,9 @@
       "first_seen": "2026-11-05",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "몽돌",
@@ -155,7 +155,10 @@
         }
       ],
       "confidence": 62,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "비온타임",
@@ -176,9 +179,9 @@
       "first_seen": "2026-10-22",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "알키알카-alki-alka",
@@ -200,9 +203,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "이외들-ioedle",
@@ -223,9 +226,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "코나-코나카드-아틀리에",
@@ -246,7 +249,10 @@
         }
       ],
       "confidence": 62,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "프로젝트웨이브",
@@ -268,9 +274,9 @@
       "first_seen": "2026-11-12",
       "confidence": 80,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -436,7 +442,8 @@
         }
       ],
       "first_seen": "2026-11-05",
-      "confidence": 80
+      "confidence": 80,
+      "d_day": 14
     }
   ],
   "notes": [
