@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-18 12:47 KST",
-  "as_of": "2026-11-18",
+  "generated_at": "2026-11-19 07:25 KST",
+  "as_of": "2026-11-19",
   "store": "더현대 서울",
   "popups": [
     {
@@ -26,117 +26,6 @@
       "confidence": 80
     },
     {
-      "id": "요넥-요넥스",
-      "name": "요넥스 배드민턴 팝업",
-      "floor": "B1",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 1층 아이코닉",
-      "venue_alt": "지하 1층 POP-UP ICONIC",
-      "summary": "배드민턴 대표 브랜드 요넥스 팝업스토어.",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        },
-        {
-          "name": "더현대 서울 공식 캘린더",
-          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002610512844",
-          "kind": "official"
-        }
-      ],
-      "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "closed",
-        "conflict"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "999휴머니티",
-      "name": "999휴머니티",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 POP-UP@ICONIC",
-      "price": "인스타 5% 할인 · 리퍼브 특가",
-      "summary": "26 FW 인기 제품 단독 재입고 \u0026 리퍼브 팝업. 구스 푸퍼·플리스 등, 선착순 핸드워머/비니 증정.",
-      "sources": [
-        {
-          "name": "더현대 서울 공식 WEEKLY POP-UP",
-          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
-          "kind": "official"
-        },
-        {
-          "name": "아이즈매거진 단독 보도",
-          "url": "https://www.eyesmag.com/posts/165616/999humanity-hyundai-seoul-popup",
-          "kind": "press"
-        }
-      ],
-      "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "raive-x-박현지",
-      "name": "RAIVE x 박현지",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 POP-UP@ICONIC",
-      "price": "콜라보 20% OFF · 최대 50% OFF",
-      "summary": "레이브 26 윈터 컬렉션 협업 팝업. 11/12(목) 15~17시 박현지 1DAY STAFF 이벤트.",
-      "sources": [
-        {
-          "name": "더현대 서울 공식 WEEKLY POP-UP",
-          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
-          "kind": "official"
-        }
-      ],
-      "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "롱샴-마이-플리아쥬",
-      "name": "롱샴 마이 플리아쥬",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-05",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 센트럴 팝업존",
-      "summary": "롱샴 향수·라이프 팝업.",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        },
-        {
-          "name": "수동 검증(공식·플랫폼·언론 대조)",
-          "url": "https://thehyundaiseoul.ehyundai.com/",
-          "kind": "seed"
-        }
-      ],
-      "first_seen": "2026-11-05",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
       "id": "몽돌",
       "name": "몽돌",
       "floor": "B2",
@@ -144,9 +33,6 @@
       "start_date": "2026-11-19",
       "end_date": "2026-11-25",
       "venue": "지하 2층 어택존",
-      "tags": [
-        "upcoming"
-      ],
       "sources": [
         {
           "name": "팝업나우",
@@ -158,77 +44,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 7
-    },
-    {
-      "id": "비온타임",
-      "name": "비온타임",
-      "floor": "B2",
-      "category": "beauty",
-      "start_date": "2026-10-22",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 나이스웨더 매장",
-      "summary": "뷰티 브랜드 비온타임 팝업. 립틴트·플래시 글로스 선공개, 기획세트 사은품 증정.",
-      "sources": [
-        {
-          "name": "더현대 서울 입점 안내",
-          "url": "https://thehyundaiseoul.ehyundai.com/",
-          "kind": "official"
-        }
-      ],
-      "first_seen": "2026-10-22",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "알키알카-alki-alka",
-      "name": "알키알카 ALKI ALKA",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 POP-UP@EAST",
-      "price": "최대 45% 할인",
-      "summary": "여성 패션 첫 팝업스토어. 최대 45% 할인, 구매금액별 사은품 및 리퍼브 1~5만원 균일가.",
-      "sources": [
-        {
-          "name": "더현대 서울 공식 캘린더",
-          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514786",
-          "kind": "official"
-        }
-      ],
-      "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "이외들-ioedle",
-      "name": "이외들 IOEDLE",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 POP-UP@WEST",
-      "summary": "1990년대 버스정류장 레트로 콘셉트 팝업.",
-      "sources": [
-        {
-          "name": "더현대 서울 공식 캘린더",
-          "url": "https://thehyundaiseoul.ehyundai.com/event-info/E4002611514269",
-          "kind": "official"
-        }
-      ],
-      "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
+      "d_day": 6
     },
     {
       "id": "코나-코나카드-아틀리에",
@@ -238,9 +54,6 @@
       "start_date": "2026-11-19",
       "end_date": "2026-11-25",
       "venue": "지하 2층 센트럴 팝업존",
-      "tags": [
-        "upcoming"
-      ],
       "sources": [
         {
           "name": "팝업나우",
@@ -252,31 +65,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 7
-    },
-    {
-      "id": "프로젝트웨이브",
-      "name": "프로젝트웨이브",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-18",
-      "venue": "지하 2층 ATTAG!",
-      "price": "신상 최대 15% · 베스트 최대 40%",
-      "summary": "2030 데일리 스타일 컬렉션 팝업. 카카오톡 플친 5,000원 즉시 할인, 구매금액별 사은품.",
-      "sources": [
-        {
-          "name": "더현대 서울 공식 WEEKLY POP-UP",
-          "url": "https://thehyundaiseoul.ehyundai.com/issue-diary/a393540d-573a-4def-96a8-a13437d8635d",
-          "kind": "official"
-        }
-      ],
-      "first_seen": "2026-11-12",
-      "confidence": 80,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
+      "d_day": 6
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -443,7 +232,7 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 14
+      "d_day": 13
     }
   ],
   "notes": [
