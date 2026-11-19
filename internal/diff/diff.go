@@ -1,6 +1,7 @@
 package diff
 
 import (
+	"sort"
 	"time"
 
 	"github.com/yuundu/thehyundai-popup/internal/model"
@@ -64,7 +65,42 @@ func Compare(prev *model.Snapshot, cur model.Snapshot, asOf time.Time) model.Cha
 		}
 	}
 
+	SortChanges(set.Changes)
 	return set
+}
+
+// SortChanges 는 변동 목록을 결정적인 순서로 정렬한다.
+// Compare 가 map 을 도는 탓에 순서가 매번 달라지면, 내용이 같은 날의 재실행에서도
+// 파일이 바뀐 것처럼 보이고(불필요한 커밋) 달라진 부분을 눈으로 찾기 어렵다.
+func SortChanges(changes []model.Change) {
+	sort.SliceStable(changes, func(i, j int) bool {
+		a, b := changes[i], changes[j]
+		if ra, rb := typeRank(a.Type), typeRank(b.Type); ra != rb {
+			return ra < rb
+		}
+		if a.Floor != b.Floor {
+			return a.Floor < b.Floor
+		}
+		if a.Name != b.Name {
+			return a.Name < b.Name
+		}
+		if a.Field != b.Field {
+			return a.Field < b.Field
+		}
+		return a.ID < b.ID
+	})
+}
+
+// typeRank 는 정렬·표기 순서: 신규 → 종료 → 변경.
+func typeRank(t model.ChangeType) int {
+	switch t {
+	case model.ChangeAdded:
+		return 0
+	case model.ChangeRemoved:
+		return 1
+	default:
+		return 2
+	}
 }
 
 // addedMessage 는 신규 팝업 한 줄 소개를 만든다.

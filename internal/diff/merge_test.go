@@ -2,6 +2,7 @@ package diff
 
 import (
 	"testing"
+	"time"
 
 	"github.com/yuundu/thehyundai-popup/internal/model"
 )
@@ -125,5 +126,32 @@ func TestMergeDayOtherDayPassthrough(t *testing.T) {
 	merged := MergeDay(old, fresh, nil)
 	if len(merged.Changes) != 0 {
 		t.Fatalf("다른 날짜 변동이 섞임: %+v", merged.Changes)
+	}
+}
+
+// 같은 입력이면 변동 순서도 항상 같아야 한다(재실행 시 파일이 바뀐 것처럼 보이지 않도록).
+func TestCompareIsDeterministic(t *testing.T) {
+	prev := &model.Snapshot{AsOf: "2026-11-19", Popups: []model.Popup{}}
+	cur := model.Snapshot{AsOf: "2026-11-20"}
+	for _, id := range []string{"z-9", "a-1", "m-5", "k-3", "b-2", "y-8", "c-4", "n-6"} {
+		cur.Popups = append(cur.Popups, model.Popup{ID: id, Name: "팝업 " + id, Floor: "B2"})
+	}
+	as := time.Date(2026, 11, 20, 0, 0, 0, 0, time.UTC)
+
+	first := Compare(prev, cur, as)
+	for i := 0; i < 20; i++ {
+		again := Compare(prev, cur, as)
+		if len(again.Changes) != len(first.Changes) {
+			t.Fatalf("건수 변화: %d vs %d", len(again.Changes), len(first.Changes))
+		}
+		for j := range first.Changes {
+			if again.Changes[j].ID != first.Changes[j].ID {
+				t.Fatalf("%d번째 실행에서 순서가 달라짐: %s vs %s", i, again.Changes[j].ID, first.Changes[j].ID)
+			}
+		}
+	}
+	// 이름 오름차순(신규→종료→변경, 같은 종류면 층·이름)으로 정렬된다.
+	if first.Changes[0].ID != "a-1" || first.Changes[len(first.Changes)-1].ID != "z-9" {
+		t.Fatalf("정렬 규칙 위반: %+v", first.Changes)
 	}
 }

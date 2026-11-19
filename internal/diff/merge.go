@@ -62,6 +62,7 @@ func MergeDay(existing, fresh model.ChangeSet, today []model.Popup) model.Change
 	}
 
 	merged.Counts = CountChanges(merged.Changes)
+	SortChanges(merged.Changes)
 	return merged
 }
 
