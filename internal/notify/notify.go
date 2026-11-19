@@ -40,6 +40,9 @@ func (Console) Send(set model.ChangeSet) error {
 }
 
 // File 채널: 변동 내역을 data/changes-YYYY-MM-DD.json 으로 남긴다.
+//
+// 같은 날 재실행에서 내용이 그대로면 파일을 건드리지 않는다.
+// (빈 목록으로 덮어써서 이미 기록된 당일 변동을 지우는 일을 막는다)
 type File struct{ Dir string }
 
 func (f File) Name() string { return "file" }
@@ -56,7 +59,11 @@ func (f File) Send(set model.ChangeSet) error {
 		return err
 	}
 	path := filepath.Join(f.Dir, "changes-"+set.AsOf+".json")
-	return os.WriteFile(path, append(b, '\n'), 0o644)
+	body := append(b, '\n')
+	if old, err := os.ReadFile(path); err == nil && bytes.Equal(old, body) {
+		return nil // 같은 내용 — 다시 쓰지 않는다
+	}
+	return os.WriteFile(path, body, 0o644)
 }
 
 // Slack 채널: SLACK_WEBHOOK_URL 이 설정돼 있으면 변동 요약을 보낸다.

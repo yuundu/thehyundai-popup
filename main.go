@@ -19,6 +19,7 @@ import (
 	"io/fs"
 	"log"
 	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/yuundu/thehyundai-popup/internal/crawler"
@@ -71,11 +72,14 @@ func run(o RunOptions) error {
 	asOfStr := asOf.Format("2006-01-02")
 	log.Printf("기준일: %s (%s)", asOfStr, weekdayKO(asOf))
 
-	// 1) 어제 기준 스냅샷 로드(첫 실행이면 nil → Diff 스킵)
-	prev, err := store.LoadSnapshot(storePath)
-	if err != nil {
-		log.Printf("어제 스냅샷 로드 실패(무시하고 진행): %v", err)
-		prev = nil
+	// 1) Diff 기준 스냅샷: '오늘 이전' 가장 최근 수집본을 우선 쓴다.
+	//    같은 날 두 번 돌면(07:25 예약 실행 + 지연된 GitHub cron) last_snapshot.json 은
+	//    이미 오늘자로 덮여 있어, 그것을 기준으로 삼으면 당일 변동이 '변동 없음'이 된다.
+	prev, baseFrom := loadBaseline(storePath, historyDir, asOfStr)
+	if prev != nil {
+		log.Printf("Diff 기준: %s (%s)", prev.AsOf, baseFrom)
+	} else {
+		log.Printf("Diff 기준 없음 — 오늘은 전체 수집만 하고 변동은 비워 둡니다")
 	}
 
 	// 2) 수집: 출처별 goroutine 동시 수집 + 부분 실패 허용
@@ -148,6 +152,20 @@ func run(o RunOptions) error {
 	set := diff.Compare(prev, cur, asOf)
 	log.Printf("변동: 신규 %d · 종료 %d · 변경 %d", set.Counts["added"], set.Counts["removed"], set.Counts["updated"])
 
+	// 4-1) 같은 날 재실행 보호: 오늘자 변동 파일이 이미 있으면 빈 목록으로 덮어쓰지 않고,
+	//      이번 실행 변동과 합쳐서 보존한다(이미 알린 종료·신규가 사라지는 것을 막음).
+	changePath := filepath.Join("data", "changes-"+asOfStr+".json")
+	if saved, err := store.LoadChangeSet(changePath); err != nil {
+		log.Printf("오늘자 변동 파일 로드 실패(무시하고 진행): %v", err)
+	} else if saved != nil && len(saved.Changes) > 0 {
+		merged := diff.MergeDay(*saved, set, popups)
+		if len(merged.Changes) != len(set.Changes) {
+			log.Printf("당일 변동 보존: 기존 %d건 + 이번 실행 %d건 → %d건 (덮어쓰지 않음)",
+				len(saved.Changes), len(set.Changes), len(merged.Changes))
+		}
+		set = merged
+	}
+
 	// 5) 알림 채널: 콘솔+파일 기본, SLACK_WEBHOOK_URL 있으면 슬랙 추가
 	for _, ch := range notify.All(os.Getenv("SLACK_WEBHOOK_URL"), "data") {
 		if err := ch.Send(set); err != nil {
@@ -190,6 +208,29 @@ func run(o RunOptions) error {
 	}
 	log.Printf("빌드 완료: %s/index.html (팝업 %d건)", distDir, len(popups))
 	return nil
+}
+
+// loadBaseline 은 Diff 기준이 될 직전 수집본을 고른다.
+//
+// data/history/YYYY-MM-DD.json 중 '오늘보다 이른 날짜의 가장 최근' 사본을 우선한다.
+// last_snapshot.json 은 같은 날 재실행에서 이미 오늘자로 덮여 있을 수 있어서,
+// 그것만 믿으면 당일 변동이 매번 빈 목록으로 다시 계산된다.
+// 쓸 만한 히스토리가 없을 때만 last_snapshot.json 으로 물러난다.
+func loadBaseline(storePath, historyDir, asOfStr string) (*model.Snapshot, string) {
+	if s, path, err := store.LatestSnapshotBefore(historyDir, asOfStr); err != nil {
+		log.Printf("히스토리 스냅샷 조회 실패(무시): %v", err)
+	} else if s != nil {
+		return s, path
+	}
+	s, err := store.LoadSnapshot(storePath)
+	if err != nil {
+		log.Printf("어제 스냅샷 로드 실패(무시하고 진행): %v", err)
+		return nil, ""
+	}
+	if s == nil {
+		return nil, ""
+	}
+	return s, storePath
 }
 
 func main() {

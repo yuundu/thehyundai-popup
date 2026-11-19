@@ -9,6 +9,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
+	"time"
 
 	"github.com/yuundu/thehyundai-popup/internal/model"
 )
@@ -60,6 +62,70 @@ func SaveHistory(dir string, s model.Snapshot) error {
 		return nil
 	}
 	return SaveSnapshot(filepath.Join(dir, s.AsOf+".json"), s)
+}
+
+// LatestSnapshotBefore 는 dir 안의 날짜별 보관본 중 asOf(YYYY-MM-DD)보다 이른 날짜의
+// 가장 최근 스냅샷을 돌려준다. 같은 날 재실행에서도 "직전 수집일"을 기준으로 삼기 위한 것이다.
+// 해당하는 파일이 없으면 (nil, "", nil).
+func LatestSnapshotBefore(dir, asOf string) (*model.Snapshot, string, error) {
+	if dir == "" || asOf == "" {
+		return nil, "", nil
+	}
+	ents, err := os.ReadDir(dir)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil, "", nil
+		}
+		return nil, "", fmt.Errorf("히스토리 폴더 읽기 실패 %s: %w", dir, err)
+	}
+	best := ""
+	for _, e := range ents {
+		if e.IsDir() || filepath.Ext(e.Name()) != ".json" {
+			continue
+		}
+		day := strings.TrimSuffix(e.Name(), ".json")
+		if len(day) != 10 {
+			continue
+		}
+		if _, err := time.ParseInLocation("2006-01-02", day, time.UTC); err != nil {
+			continue
+		}
+		if day >= asOf {
+			continue
+		}
+		if day > best {
+			best = day
+		}
+	}
+	if best == "" {
+		return nil, "", nil
+	}
+	path := filepath.Join(dir, best+".json")
+	s, err := LoadSnapshot(path)
+	if err != nil {
+		return nil, path, err
+	}
+	return s, path, nil
+}
+
+// LoadChangeSet 은 하루치 변동 파일(data/changes-YYYY-MM-DD.json)을 읽는다.
+// 파일이 없으면 (nil, nil) — 첫 실행으로 취급한다.
+func LoadChangeSet(path string) (*model.ChangeSet, error) {
+	if path == "" {
+		return nil, nil
+	}
+	b, err := os.ReadFile(path)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil, nil
+		}
+		return nil, fmt.Errorf("변동 파일 읽기 실패 %s: %w", path, err)
+	}
+	var cs model.ChangeSet
+	if err := json.Unmarshal(b, &cs); err != nil {
+		return nil, fmt.Errorf("변동 파일 파싱 실패 %s: %w", path, err)
+	}
+	return &cs, nil
 }
 
 // WriteJSON 은 임의의 값을 들여쓰기 JSON 으로 저장한다(웹 배포용 산출물).

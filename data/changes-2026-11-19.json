@@ -1,8 +1,67 @@
 {
   "as_of": "2026-11-19",
-  "previous_of": "2026-11-19",
-  "counts": {},
-  "changes": [],
+  "previous_of": "2026-11-18",
+  "counts": {
+    "removed": 8
+  },
+  "changes": [
+    {
+      "type": "removed",
+      "id": "999휴머니티",
+      "name": "999휴머니티",
+      "floor": "B2",
+      "message": "🏁 종료: 999휴머니티"
+    },
+    {
+      "type": "removed",
+      "id": "롱샴-마이-플리아쥬",
+      "name": "롱샴 마이 플리아쥬",
+      "floor": "B2",
+      "message": "🏁 종료: 롱샴 마이 플리아쥬"
+    },
+    {
+      "type": "removed",
+      "id": "알키알카-alki-alka",
+      "name": "알키알카 ALKI ALKA",
+      "floor": "B2",
+      "message": "🏁 종료: 알키알카 ALKI ALKA"
+    },
+    {
+      "type": "removed",
+      "id": "이외들-ioedle",
+      "name": "이외들 IOEDLE",
+      "floor": "B2",
+      "message": "🏁 종료: 이외들 IOEDLE"
+    },
+    {
+      "type": "removed",
+      "id": "프로젝트웨이브",
+      "name": "프로젝트웨이브",
+      "floor": "B2",
+      "message": "🏁 종료: 프로젝트웨이브"
+    },
+    {
+      "type": "removed",
+      "id": "요넥-요넥스",
+      "name": "요넥스 배드민턴 팝업",
+      "floor": "B1",
+      "message": "🏁 종료: 요넥스 배드민턴 팝업"
+    },
+    {
+      "type": "removed",
+      "id": "비온타임",
+      "name": "비온타임",
+      "floor": "B2",
+      "message": "🏁 종료: 비온타임"
+    },
+    {
+      "type": "removed",
+      "id": "raive-x-박현지",
+      "name": "RAIVE x 박현지",
+      "floor": "B2",
+      "message": "🏁 종료: RAIVE x 박현지"
+    }
+  ],
   "notes": [
     "크리스마스 빌리지: 캠페인 전체 기간은 11/1~12/31이지만 더현대 서울 입장 가능일은 11/10(화)부터 — 공식 이벤트 페이지 기준.",
     "11/5(목) 1차 사전예약은 서버 오류로 중단 후 당일 18:00 네이버 예약으로 재진행(현대백화점 공지). 2차 예약 일정은 미공개.",

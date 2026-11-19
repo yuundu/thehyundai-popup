@@ -26,13 +26,26 @@ GitHub Actions cron (UTC 23:49, 평일)
  go run main.go
    ├─ 1. crawler: 출처별 동시 수집(goroutine) — 일부 출처가 죽어도 계속
    ├─ 2. merge:   출처 우선순위 병합(공식>플랫폼>언론>SNS) + 불일치 값 병기(Alt)
-   ├─ 3. diff:    어제 data/last_snapshot.json 과 비교 → 신규/종료/변경
+   ├─ 3. diff:    직전 수집일(어제) 스냅샷과 비교 → 신규/종료/변경
    ├─ 4. notify:  콘솔(Actions 요약) + data/changes-YYYY-MM-DD.json (+슬랙 웹훅 설정 시)
    └─ 5. site:    out/index.html + out/popups.json 재생성
         │
         ▼
  data/last_snapshot.json 커밋(내일 Diff 기준) → out/ 을 GitHub Pages 배포
 ```
+
+### 같은 날 두 번 돌아도 안전 (2026-11-20 수정)
+
+GitHub Actions cron 은 몇 시간씩 밀려 같은 날 늦게 다시 돌 때가 있습니다(07:25 예약 실행 뒤 낮 실행).
+그때 `data/last_snapshot.json` 은 이미 오늘자로 덮여 있어, 그 파일만 기준으로 삼으면 당일 변동이
+'변동 없음'으로 다시 계산되어 아침에 기록한 종료·신규 내역이 지워졌습니다(11-19 실제 발생).
+지금은
+
+- Diff 기준을 `data/history/` 의 **'오늘보다 이른 날짜의 가장 최근' 사본**으로 고르고(없을 때만 `last_snapshot.json`),
+- 오늘자 `data/changes-YYYY-MM-DD.json` 이 이미 있으면 **빈 목록으로 덮어쓰지 않고 병합·보존**하며(같은 팝업·필드는 최신 수집값 우선, 오늘 목록과 모순되는 항목은 폐기),
+- 파일 내용이 그대로면 다시 쓰지 않습니다.
+
+그래서 재실행은 멱등(idempotent)이고, 낮에 새로 잡힌 변동은 아침 내역에 더해집니다.
 
 ## 로컬 실행
 
@@ -80,7 +93,7 @@ internal/seed/              수동 검증 기준 스냅샷(2026-11-06)
 internal/server/            -serve 로컬 미리보기 서버
 internal/site/              index.html 템플릿 렌더러
 internal/store/             스냅샷/히스토리 저장(원자적 쓰기)
-data/last_snapshot.json     어제 기준 스냅샷(Diff 기준 — CI 가 커밋해 보존)
+data/last_snapshot.json     직전 수집 스냅샷(히스토리가 없을 때의 Diff 기준 — CI 가 커밋해 보존)
 data/history/               날짜별 보관
 data/changes-*.json         일일 변동 기록(알림 로그)
 out/                        배포 산출물(index.html, popups.json, changes.json)
