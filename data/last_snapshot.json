@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-11-19 12:44 KST",
-  "as_of": "2026-11-19",
+  "generated_at": "2026-11-20 07:25 KST",
+  "as_of": "2026-11-20",
   "store": "더현대 서울",
   "popups": [
+    {
+      "id": "국가-전통문화상품",
+      "name": "국가 전통문화상품",
+      "floor": "B1",
+      "category": "fashion",
+      "start_date": "2026-11-21",
+      "end_date": "2026-11-29",
+      "venue": "지하 1층 팝업 아이코닉",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "d_day": 9
+    },
     {
       "id": "오니기리-고리짱",
       "name": "오니기리 고리짱",
@@ -26,6 +47,27 @@
       "confidence": 80
     },
     {
+      "id": "낫포-낫포너드-시즌",
+      "name": "낫포 낫포너드 시즌",
+      "floor": "B2",
+      "category": "season",
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-25",
+      "venue": "지하 2층 아이코닉 존",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 5
+    },
+    {
       "id": "몽돌",
       "name": "몽돌",
       "floor": "B2",
@@ -44,7 +86,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "코나-코나카드-아틀리에",
@@ -65,7 +107,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 6
+      "d_day": 5
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -232,7 +274,7 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 13
+      "d_day": 12
     }
   ],
   "notes": [
