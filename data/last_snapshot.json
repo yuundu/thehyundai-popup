@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-20 12:39 KST",
-  "as_of": "2026-11-20",
+  "generated_at": "2026-11-23 07:26 KST",
+  "as_of": "2026-11-23",
   "store": "더현대 서울",
   "popups": [
     {
@@ -11,9 +11,6 @@
       "start_date": "2026-11-21",
       "end_date": "2026-11-29",
       "venue": "지하 1층 팝업 아이코닉",
-      "tags": [
-        "upcoming"
-      ],
       "sources": [
         {
           "name": "팝업나우",
@@ -22,7 +19,31 @@
         }
       ],
       "confidence": 62,
-      "d_day": 9
+      "status": [
+        "ending"
+      ],
+      "d_day": 6
+    },
+    {
+      "id": "아이-취향이-머무는-집-k-craft-하우스",
+      "name": "아이 취향이 머무는 집, K-CRAFT 하우스",
+      "floor": "B1",
+      "category": "fashion",
+      "start_date": "2026-11-21",
+      "end_date": "2026-11-29",
+      "venue": "지하 1층 아이코닉존",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 6
     },
     {
       "id": "오니기리-고리짱",
@@ -65,7 +86,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "몽돌",
@@ -86,7 +107,28 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
+    },
+    {
+      "id": "에스-에스더버니-x-트와이스-나연-콜라보",
+      "name": "에스 에스더버니 X 트와이스 나연 콜라보",
+      "floor": "B2",
+      "category": "fashion",
+      "start_date": "2026-11-26",
+      "end_date": "2026-12-02",
+      "venue": "지하 2층 팝업 센트럴",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "d_day": 9
     },
     {
       "id": "코나-코나카드-아틀리에",
@@ -107,7 +149,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 2
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -126,6 +168,43 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80
+    },
+    {
+      "id": "김연-신인감독-김연경2-팝업-스토어",
+      "name": "김연 신인감독 김연경2 팝업 스토어",
+      "floor": "5F",
+      "category": "fashion",
+      "start_date": "2026-12-05",
+      "end_date": "2026-12-16",
+      "venue": "5층 웨이브 서울",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
+    {
+      "id": "다마-다마고치-탄생-30주년",
+      "name": "다마 다마고치 탄생 30주년",
+      "floor": "5F",
+      "category": "fashion",
+      "end_date": "2026-12-03",
+      "venue": "5층 행사장 ~ 12.03",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "d_day": 10
     },
     {
       "id": "베즐-베즐리-크리스마스",
@@ -225,9 +304,6 @@
       "start_date": "2026-11-21",
       "end_date": "2027-03-01",
       "venue": "6층 알트원",
-      "tags": [
-        "upcoming"
-      ],
       "sources": [
         {
           "name": "팝업나우",
@@ -274,7 +350,7 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 12
+      "d_day": 9
     }
   ],
   "notes": [
