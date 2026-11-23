@@ -94,6 +94,8 @@ const newTmpl = `<!DOCTYPE html>
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+/* .card/.week-section 의 display 규칙이 hidden 속성을 덮지 않도록 */
+[hidden] { display: none !important; }
 body {
   background: var(--bg);
   color: var(--text-main);
