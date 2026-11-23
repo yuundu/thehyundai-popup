@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/yuundu/thehyundai-popup/internal/theedit"
 )
@@ -14,7 +15,19 @@ import (
 var newFuncMap = template.FuncMap{
 	"dateKO":     DateKO,
 	"searchText": searchText,
+	"stampLabel": stampLabel,
 	"itemCount":  func(w theedit.Week) int { return len(w.Items) },
+}
+
+// stampLabel 은 수집 시각 표기를 화면용으로 다듬는다.
+// "2026-11-23T16:25:38+09:00" 또는 예전 "2026-11-23 16:25 KST" → "2026-11-23 16:25 KST".
+func stampLabel(s string) string {
+	for _, layout := range []string{time.RFC3339, "2006-01-02 15:04 KST"} {
+		if t, err := time.Parse(layout, s); err == nil {
+			return t.In(time.FixedZone("KST", 9*60*60)).Format("2006-01-02 15:04 KST")
+		}
+	}
+	return s
 }
 
 // searchText 는 카드 검색용 색인 문자열(소문자)을 만든다.
@@ -470,7 +483,7 @@ footer {
     <a class="origin-link" href="{{$latest.Link}}" target="_blank" rel="noopener">원문 보기 ↗</a>
   </div>
   {{end}}
-  <div class="updated-line">최근 수집 {{.GeneratedAt}} · 매일 아침 자동 갱신 (매주 월요일 새 주차)</div>
+  <div class="updated-line">최근 수집 {{stampLabel .GeneratedAt}} · 매일 아침 자동 갱신 (매주 월요일 새 주차)</div>
 </header>
 
 <div class="controls-bar">
