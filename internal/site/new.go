@@ -493,7 +493,7 @@ footer {
 
 <div id="list">
 {{range $w := .Weeks}}
-  <section class="week-section" data-week="{{$w.ID}}" data-items="{{itemCount $w}}" data-count-label="{{itemCount $w}}개 · {{dateKO $w.Date}}"{{if $w.New}} data-new="1"{{end}}{{if ne $w.ID (index $.Weeks 0).ID}} hidden{{end}}>
+  <section class="week-section" data-week="{{$w.ID}}" data-items="{{itemCount $w}}" data-label="{{$w.Week}}" data-count-label="{{itemCount $w}}개 · {{dateKO $w.Date}}"{{if $w.New}} data-new="1"{{end}}{{if ne $w.ID (index $.Weeks 0).ID}} hidden{{end}}>
     <div class="week-head">
       <div class="head-left">
         <span class="week-code">{{$w.Week}}</span>
@@ -560,7 +560,8 @@ let curWeek = sections.length ? sections[0].dataset.week : null;
 function apply() {
   const term = q.value.trim().toLowerCase();
   let shownTotal = 0;
-  let latestShown = 0;
+  let pickLabel = "이번 주";
+  let pickCount = 0;
 
   sections.forEach((sec, idx) => {
     const cards = Array.from(sec.querySelectorAll(".card"));
@@ -577,7 +578,10 @@ function apply() {
     if (cnt) cnt.textContent = term ? shown + "개 검색됨" : (sec.dataset.countLabel || sec.dataset.items + "개");
     if (visible) {
       shownTotal += shown;
-      if (idx === 0) latestShown = shown;
+      if (!term) {
+        pickLabel = idx === 0 ? "이번 주" : (sec.dataset.label || "선택한 주차");
+        pickCount = shown;
+      }
     }
   });
 
@@ -585,7 +589,7 @@ function apply() {
   if (term) {
     countEl.innerHTML = '검색 결과 <span class="total-highlight">' + shownTotal + '</span>개 (전체 ' + totalItems + '개 중)';
   } else {
-    countEl.innerHTML = '이번 주 <span class="total-highlight">' + latestShown + '</span>개 신상 · 아카이브 ' + weekCount + '주 / 총 ' + totalItems + '개';
+    countEl.innerHTML = pickLabel + ' <span class="total-highlight">' + pickCount + '</span>개 신상 · 아카이브 ' + weekCount + '주 / 총 ' + totalItems + '개';
   }
   document.getElementById("empty").hidden = shownTotal > 0;
 }
