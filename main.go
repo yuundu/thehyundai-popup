@@ -30,6 +30,7 @@ import (
 	"github.com/yuundu/thehyundai-popup/internal/server"
 	"github.com/yuundu/thehyundai-popup/internal/site"
 	"github.com/yuundu/thehyundai-popup/internal/store"
+	"github.com/yuundu/thehyundai-popup/internal/theedit"
 )
 
 // distFS 는 빌드 산출물(out/)을 실행 파일에 붙여 넣는다.
@@ -42,6 +43,9 @@ const (
 	storePath  = "data/last_snapshot.json" // 어제 기준 스냅샷(다음 Diff 의 기준)
 	historyDir = "data/history"            // 날짜별 보관
 	distDir    = "out"                     // Pages 배포 대상
+
+	theeditArchivePath = "data/theedit-archive.json" // 디에디트 [새로나왔] 누적 보관본
+	newPagePath        = distDir + "/new/index.html"
 )
 
 // RunOptions 는 한 번의 실행 설정.
@@ -207,6 +211,46 @@ func run(o RunOptions) error {
 		return fmt.Errorf("changes.json 생성 실패: %w", err)
 	}
 	log.Printf("빌드 완료: %s/index.html (팝업 %d건)", distDir, len(popups))
+
+	// 8) 디에디트 [새로나왔] — 수집이 실패해도 기존 아카이브로 페이지를 유지한다.
+	if err := buildTheEdit(theeditArchivePath, newPagePath); err != nil {
+		log.Printf("경고: [새로나왔] 페이지 빌드 실패(팝업 사이트는 정상): %v", err)
+	}
+	return nil
+}
+
+// buildTheEdit 는 디에디트 [새로나왔] 아카이브를 갱신하고 out/new/index.html 을 만든다.
+func buildTheEdit(archivePath, outPath string) error {
+	old, err := theedit.Load(archivePath)
+	if err != nil {
+		log.Printf("[디에디트] 보관본 로드 실패(무시하고 계속): %v", err)
+		old = nil
+	}
+
+	// 팝업 수집용 ctx 와 분리한다(수집이 오래 걸려도 신상 목록은 따로 받아온다).
+	fctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+	fetched, ferr := theedit.Fetch(fctx)
+	if ferr != nil {
+		log.Printf("[디에디트] 수집 실패 — 기존 아카이브로 빌드합니다: %v", ferr)
+		if old == nil {
+			return site.WriteNewPage(outPath, theedit.Archive{})
+		}
+		// 보관본을 그대로 렌더하고 저장은 건너뛴다(이전 NEW 표시 유지).
+		return site.WriteNewPage(outPath, *old)
+	}
+
+	arch, discovered := theedit.Merge(old, fetched, time.Now())
+	if len(discovered) > 0 {
+		log.Printf("[디에디트] 새 주차 발견: %v", discovered)
+	}
+	if err := store.WriteJSON(archivePath, arch); err != nil {
+		return fmt.Errorf("아카이브 저장 실패: %w", err)
+	}
+	if err := site.WriteNewPage(outPath, arch); err != nil {
+		return fmt.Errorf("[새로나왔] 페이지 생성 실패: %w", err)
+	}
+	log.Printf("빌드 완료: %s (아카이브 %d주 · 아이템 %d개)", outPath, len(arch.Weeks), arch.TotalItems)
 	return nil
 }
 

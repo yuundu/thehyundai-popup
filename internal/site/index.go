@@ -56,9 +56,41 @@ a { color: inherit; text-decoration: none; }
   padding: 0 20px 80px;
 }
 
+/* 사이트 내비게이션 — 두 페이지를 오가는 탭 */
+.site-nav {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar { display: none; }
+
+.site-nav a {
+  white-space: nowrap;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-sub);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav a:hover { color: var(--text-main); }
+
+.site-nav a.active {
+  color: var(--text-main);
+  border-bottom-color: var(--line-bold);
+  font-weight: 750;
+}
+
 /* 29CM & THE HYUNDAI Editorial Header */
 header {
-  padding: 44px 0 24px;
+  padding: 22px 0 24px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -559,16 +591,21 @@ footer {
 
 @media (max-width: 768px) {
   .wrap { padding: 0 16px 60px; }
-  header { padding: 28px 0 20px; }
+  header { padding: 18px 0 20px; }
   h1.main-title { font-size: 32px; }
   .grid { grid-template-columns: 1fr; }
   .floor-section-head { margin-top: 32px; }
+  .site-nav a { padding: 11px 12px; font-size: 13px; }
 }
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
+  <nav class="site-nav">
+    <a href="index.html" class="active" aria-current="page">더현대 팝업</a>
+    <a href="new/index.html">디에디트 [새로나왔]</a>
+  </nav>
   <div class="brand-eyebrow">
     <span>THE HYUNDAI SEOUL</span>
     <span class="right-badge">POP-UP RADAR · 2026</span>
