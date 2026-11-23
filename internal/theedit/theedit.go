@@ -54,12 +54,12 @@ type Item struct {
 // Week 는 [새로나왔] 한 주차 글.
 type Week struct {
 	ID           int    `json:"id"`
-	Title        string `json:"title"`                  // "[새로나왔] 11월 4주차 신상 리스트"
-	Week         string `json:"week,omitempty"`         // "11월 4주차"
-	Date         string `json:"date"`                   // "2026-11-23"
-	Link         string `json:"link"`                   // 원문 주소
-	Intro        string `json:"intro,omitempty"`        // 도입 문단
-	New          bool   `json:"new,omitempty"`          // 이번 빌드에서 처음 발견
+	Title        string `json:"title"`           // "[새로나왔] 11월 4주차 신상 리스트"
+	Week         string `json:"week,omitempty"`  // "11월 4주차"
+	Date         string `json:"date"`            // "2026-11-23"
+	Link         string `json:"link"`            // 원문 주소
+	Intro        string `json:"intro,omitempty"` // 도입 문단
+	New          bool   `json:"new,omitempty"`   // 이번 빌드에서 처음 발견
 	DiscoveredAt string `json:"discovered_at,omitempty"`
 	Items        []Item `json:"items"`
 }
@@ -379,6 +379,19 @@ func SortWeeks(ws []Week) {
 	})
 }
 
+// NewBadgeWindow 는 NEW 배지를 유지하는 기간.
+const NewBadgeWindow = 72 * time.Hour
+
+// FreshDate 는 "2026-11-23" 발행일이 now 기준 window 안에 있는지 본다(KST 0시 기준).
+func FreshDate(date string, now time.Time, window time.Duration) bool {
+	t, err := time.ParseInLocation("2006-01-02", date, time.FixedZone("KST", kstOffset))
+	if err != nil {
+		return false
+	}
+	d := now.Sub(t)
+	return d <= window && d >= -24*time.Hour
+}
+
 // Load 는 아카이브를 읽는다. 파일이 없으면 (nil, nil).
 func Load(path string) (*Archive, error) {
 	if path == "" {
@@ -401,7 +414,7 @@ func Load(path string) (*Archive, error) {
 // Merge 는 기존 아카이브와 새로 수집한 주차를 합친다.
 // 이번에 처음 본 주차는 New=true 로 표시하고, 그동안의 NEW 표시는 내린다.
 func Merge(old *Archive, fetched []Week, now time.Time) (Archive, []int) {
-	stamp := now.In(time.FixedZone("KST", kstOffset)).Format("2006-01-02 15:04 KST")
+	stamp := now.In(time.FixedZone("KST", kstOffset)).Format(time.RFC3339)
 
 	byID := map[int]Week{}
 	if old != nil {
@@ -433,14 +446,13 @@ func Merge(old *Archive, fetched []Week, now time.Time) (Archive, []int) {
 	}
 	SortWeeks(weeks)
 
-	// 첫 빌드(보관본 없음)에서는 전부 NEW 가 되지 않도록 최신 주차만 NEW 로 둔다.
-	if old == nil || len(old.Weeks) == 0 {
-		for i := range weeks {
-			weeks[i].New = i == 0
-		}
-		if len(weeks) > 0 {
-			discovered = []int{weeks[0].ID}
-		}
+	// NEW 배지는 가장 최신 주차가 발행 3일 이내일 때만 붙인다.
+	// 매일 다시 빌드해도 다음 주차가 올라오기 전까지 "이번 주 새 소식"임을 알 수 있다.
+	for i := range weeks {
+		weeks[i].New = false
+	}
+	if len(weeks) > 0 && FreshDate(weeks[0].Date, now, NewBadgeWindow) {
+		weeks[0].New = true
 	}
 
 	total := 0

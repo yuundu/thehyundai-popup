@@ -105,9 +105,9 @@ func TestParseFlexibleLayout(t *testing.T) {
 
 func TestWeekLabel(t *testing.T) {
 	cases := map[string]string{
-		"[새로나왔] 11월 4주차 신상 리스트":  "11월 4주차",
+		"[새로나왔] 11월 4주차 신상 리스트": "11월 4주차",
 		"[새로나왔] 9월 5주차 신상  리스트": "9월 5주차",
-		"[새로나왔] 신상 리스트":          "[새로나왔] 신상 리스트",
+		"[새로나왔] 신상 리스트":         "[새로나왔] 신상 리스트",
 	}
 	for in, want := range cases {
 		if got := WeekLabel(Norm(in)); got != want {
@@ -131,7 +131,7 @@ func TestMergeArchive(t *testing.T) {
 	if !first.Weeks[0].New || first.Weeks[1].New {
 		t.Errorf("첫 빌드 NEW 표시: %+v", first.Weeks)
 	}
-	if len(discovered) != 1 || discovered[0] != 2 {
+	if len(discovered) != 2 {
 		t.Errorf("첫 빌드 발견 목록: %v", discovered)
 	}
 
@@ -167,5 +167,44 @@ func TestLoadMissing(t *testing.T) {
 	a, err := Load("testdata/does-not-exist.json")
 	if err != nil || a != nil {
 		t.Fatalf("없는 파일: %v %v", a, err)
+	}
+}
+
+func TestFreshDate(t *testing.T) {
+	now := time.Date(2026, 11, 23, 16, 0, 0, 0, time.FixedZone("KST", kstOffset))
+	cases := []struct {
+		date string
+		want bool
+	}{
+		{"2026-11-23", true},  // 오늘 발행
+		{"2026-11-21", true},  // 이틀 전
+		{"2026-11-19", false}, // 나흘 전
+		{"2026-11-24", true},  // 아직 안 온 날짜(시계 오차 허용)
+		{"", false},
+		{"깨진 값", false},
+	}
+	for _, c := range cases {
+		if got := FreshDate(c.date, now, NewBadgeWindow); got != c.want {
+			t.Errorf("FreshDate(%q) = %v, want %v", c.date, got, c.want)
+		}
+	}
+}
+
+// 같은 날 다시 빌드해도 새 주차의 NEW 배지는 유지되어야 한다(매일 갱신 대응).
+func TestNewBadgeSurvivesRebuild(t *testing.T) {
+	now := time.Date(2026, 11, 23, 16, 0, 0, 0, time.FixedZone("KST", kstOffset))
+	fetched := []Week{{ID: 2, Date: "2026-11-23", Title: "[새로나왔] 11월 4주차", Items: []Item{{Name: "B"}}}}
+	first, _ := Merge(nil, fetched, now)
+	again, discovered := Merge(&first, fetched, now.Add(2*time.Hour))
+	if len(again.Weeks) != 1 || !again.Weeks[0].New {
+		t.Errorf("재빌드 후 NEW 유지 실패: %+v", again.Weeks)
+	}
+	if len(discovered) != 0 {
+		t.Errorf("이미 있던 주차를 새로 발견으로 셈: %v", discovered)
+	}
+	// 사흘 뒤에는 배지가 내려간다.
+	older, _ := Merge(&again, fetched, now.Add(4*24*time.Hour))
+	if older.Weeks[0].New {
+		t.Errorf("기한이 지난 주차에 NEW 가 남음: %+v", older.Weeks[0])
 	}
 }

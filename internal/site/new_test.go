@@ -43,7 +43,7 @@ func TestWriteNewPage(t *testing.T) {
 	s := string(b)
 
 	for _, want := range []string{
-		`href="../index.html"`,          // 더현대 팝업으로 돌아가는 상대경로
+		`href="../index.html"`, // 더현대 팝업으로 돌아가는 상대경로
 		`href="index.html" class="active"`,
 		"ISSUE 11월 4주차",
 		"NEW · 이번 주 업데이트",
