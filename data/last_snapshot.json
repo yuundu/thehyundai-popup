@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24 15:15 KST",
-  "as_of": "2026-11-24",
+  "generated_at": "2026-11-25 07:25 KST",
+  "as_of": "2026-11-25",
   "store": "더현대 서울",
   "popups": [
     {
@@ -22,7 +22,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 4
     },
     {
       "id": "아이-취향이-머무는-집-k-craft-하우스",
@@ -43,7 +43,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 5
+      "d_day": 4
     },
     {
       "id": "오니기리-고리짱",
@@ -84,9 +84,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "몽돌",
@@ -105,9 +105,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "에스-에스더버니-x-트와이스-나연-콜라보",
@@ -128,7 +128,10 @@
         }
       ],
       "confidence": 62,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "코나-코나카드-아틀리에",
@@ -147,9 +150,9 @@
       ],
       "confidence": 62,
       "status": [
-        "ending"
+        "closed"
       ],
-      "d_day": 1
+      "d_day": 0
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -221,7 +224,7 @@
         }
       ],
       "confidence": 62,
-      "d_day": 9
+      "d_day": 8
     },
     {
       "id": "베즐-베즐리-크리스마스",
@@ -367,7 +370,10 @@
       ],
       "first_seen": "2026-11-05",
       "confidence": 80,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     }
   ],
   "notes": [
