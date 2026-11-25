@@ -1,8 +1,28 @@
 {
-  "generated_at": "2026-11-25 13:58 KST",
-  "as_of": "2026-11-25",
+  "generated_at": "2026-11-26 07:30 KST",
+  "as_of": "2026-11-26",
   "store": "더현대 서울",
   "popups": [
+    {
+      "id": "가나-가나디-우체국",
+      "name": "가나 가나디 우체국",
+      "floor": "B1",
+      "category": "fashion",
+      "start_date": "2026-12-15",
+      "end_date": "2026-12-31",
+      "venue": "지하 1층 아이코닉존",
+      "tags": [
+        "upcoming"
+      ],
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
+    },
     {
       "id": "국가-전통문화상품",
       "name": "국가 전통문화상품",
@@ -22,7 +42,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 3
     },
     {
       "id": "아이-취향이-머무는-집-k-craft-하우스",
@@ -43,7 +63,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 4
+      "d_day": 3
     },
     {
       "id": "오니기리-고리짱",
@@ -68,48 +88,6 @@
       "confidence": 80
     },
     {
-      "id": "낫포-낫포너드-시즌",
-      "name": "낫포 낫포너드 시즌",
-      "floor": "B2",
-      "category": "season",
-      "start_date": "2026-11-19",
-      "end_date": "2026-11-25",
-      "venue": "지하 2층 아이코닉 존",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
-      "id": "몽돌",
-      "name": "몽돌",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-19",
-      "end_date": "2026-11-25",
-      "venue": "지하 2층 어택존",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
-    },
-    {
       "id": "에스-에스더버니-x-트와이스-나연-콜라보",
       "name": "에스 에스더버니 X 트와이스 나연 콜라보",
       "floor": "B2",
@@ -117,9 +95,6 @@
       "start_date": "2026-11-26",
       "end_date": "2026-12-02",
       "venue": "지하 2층 팝업 센트럴",
-      "tags": [
-        "upcoming"
-      ],
       "sources": [
         {
           "name": "팝업나우",
@@ -131,28 +106,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 7
-    },
-    {
-      "id": "코나-코나카드-아틀리에",
-      "name": "코나 코나카드 아틀리에",
-      "floor": "B2",
-      "category": "fashion",
-      "start_date": "2026-11-19",
-      "end_date": "2026-11-25",
-      "venue": "지하 2층 센트럴 팝업존",
-      "sources": [
-        {
-          "name": "팝업나우",
-          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
-          "kind": "platform"
-        }
-      ],
-      "confidence": 62,
-      "status": [
-        "closed"
-      ],
-      "d_day": 0
+      "d_day": 6
     },
     {
       "id": "프라다-뷰티-신제품",
@@ -224,7 +178,26 @@
         }
       ],
       "confidence": 62,
-      "d_day": 8
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
+    },
+    {
+      "id": "더현-크리스마스-빌리지",
+      "name": "더현 크리스마스 빌리지",
+      "floor": "5F",
+      "category": "season",
+      "end_date": "2026-12-31",
+      "venue": "5층 사운즈 포레스트 ~ 12.31  예약",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62
     },
     {
       "id": "베즐-베즐리-크리스마스",
@@ -241,6 +214,26 @@
         }
       ],
       "confidence": 62
+    },
+    {
+      "id": "상수-상수리나무-아래-x-잊혀진-들판",
+      "name": "상수 상수리나무 아래 X 잊혀진 들판",
+      "floor": "5F",
+      "category": "fashion",
+      "end_date": "2026-12-03",
+      "venue": "5층 ~ 12.03",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "status": [
+        "ending"
+      ],
+      "d_day": 7
     },
     {
       "id": "스텔-퓨어-골드-바",
@@ -317,6 +310,23 @@
       "confidence": 62
     },
     {
+      "id": "sn-snows",
+      "name": "SN SNOWS",
+      "floor": "UNKNOWN",
+      "category": "fashion",
+      "start_date": "2026-11-17",
+      "end_date": "2026-12-10",
+      "sources": [
+        {
+          "name": "팝업나우",
+          "url": "https://popupnow.plentyer.com/area/thehyundai-seoul/",
+          "kind": "platform"
+        }
+      ],
+      "confidence": 62,
+      "d_day": 14
+    },
+    {
       "id": "조르-조르조-모란디-특별전",
       "name": "조르 조르조 모란디 특별전",
       "floor": "6F",
@@ -373,7 +383,7 @@
       "status": [
         "ending"
       ],
-      "d_day": 7
+      "d_day": 6
     }
   ],
   "notes": [
